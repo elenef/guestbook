@@ -1,0 +1,11 @@
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\bin\Debug\netcoreapp2.0\guestbook.deps.json
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\bin\Debug\netcoreapp2.0\guestbook.runtimeconfig.json
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\bin\Debug\netcoreapp2.0\guestbook.runtimeconfig.dev.json
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\bin\Debug\netcoreapp2.0\guestbook.dll
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\bin\Debug\netcoreapp2.0\guestbook.pdb
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\obj\Debug\netcoreapp2.0\guestbook.csprojResolveAssemblyReference.cache
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\obj\Debug\netcoreapp2.0\guestbook.csproj.CoreCompileInputs.cache
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\obj\Debug\netcoreapp2.0\guestbook.AssemblyInfoInputs.cache
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\obj\Debug\netcoreapp2.0\guestbook.AssemblyInfo.cs
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\obj\Debug\netcoreapp2.0\guestbook.dll
+C:\Users\rash2\Documents\guestBook\guestbook\guestbook\obj\Debug\netcoreapp2.0\guestbook.pdb
