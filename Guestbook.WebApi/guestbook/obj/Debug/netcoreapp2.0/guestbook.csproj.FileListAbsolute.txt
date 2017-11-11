@@ -15,3 +15,8 @@ C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcorea
 C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.AssemblyInfo.cs
 C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.dll
 C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.pdb
+C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.deps.json
+C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.runtimeconfig.json
+C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.runtimeconfig.dev.json
+C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.dll
+C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.pdb
