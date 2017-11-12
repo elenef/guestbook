@@ -10,7 +10,7 @@ namespace GuestBook.Mapper
         {
             var configurationProvider = new MapperConfiguration(cfg =>
             {
-                //cfg.AddProfile<MapperProfile>();
+                cfg.AddProfile<MapperProfile>();
             });
             _mapper = configurationProvider.CreateMapper();
         }
