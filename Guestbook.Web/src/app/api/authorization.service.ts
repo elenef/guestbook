@@ -9,8 +9,11 @@ import { Router } from '@angular/router';
 export class AuthorizationService {
 
     private requestAuthorization: boolean;
+    private userRole: string;
 
-
+    get userProfileRole() {
+        return this.userRole;
+    }
 
     get authorizationRequired() {
         return this.requestAuthorization;
