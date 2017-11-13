@@ -1,3 +1,4 @@
+import { AuthorizationService } from './authorization.service';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { ApiService } from './api.service';
@@ -9,7 +10,8 @@ import { BaseApiService } from './base-api.service';
     imports: [HttpModule],
     declarations: [],
     providers: [
-        BaseApiService
+        BaseApiService,
+        AuthorizationService
     ],
     exports: [],
 })
