@@ -58,14 +58,14 @@ namespace GuestBook
 
         private void AddServices(IServiceCollection services)
         {
-            /*services.AddScoped<IEndpointService<UserContract, EditUserContract, UserFilterContract, User>, UserEndpointService>();
+            services.AddScoped<IEndpointService<UserContract, EditUserContract, UserFilterContract, User>, UserEndpointService>();
             services.AddScoped<UserEndpointService>();
 
             services.AddScoped<IEndpointService<RestaurantContract, EditRestaurantContract, RestaurantFilterContract, Restaurant>, RestaurantEndpointService>();
             services.AddScoped<RestaurantEndpointService>();
 
             services.AddScoped<IEndpointService<ReviewContract, EditReviewContract, ReviewFilterContract, Review>, ReviewEndpointService>();
-            services.AddScoped<ReviewEndpointService>();*/
+            services.AddScoped<ReviewEndpointService>();
         }
 
         private void AddFilters(IServiceCollection services)
@@ -82,7 +82,7 @@ namespace GuestBook
 
         private void AddControllerServices(IServiceCollection services)
         {
-            /*services.AddScoped(opt => new UserEndpointService(
+            services.AddScoped(opt => new UserEndpointService(
                 opt.GetService<EF7Repository<User>>(),
                 opt.GetService<IContractMapper>(),
                 opt.GetService<UserEndpointFilter>()));
@@ -99,7 +99,7 @@ namespace GuestBook
                 opt.GetService<IContractMapper>(),
                 opt.GetService<ReviewEndpointFilter>(),
                 opt.GetService<EF7Repository<User>>(),
-                opt.GetService<EF7Repository<Restaurant>>()));*/
+                opt.GetService<EF7Repository<Restaurant>>()));
         }
 
         private void AddEF7Repository<T>(IServiceCollection services)
