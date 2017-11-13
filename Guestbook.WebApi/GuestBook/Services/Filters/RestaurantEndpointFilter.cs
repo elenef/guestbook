@@ -11,6 +11,14 @@ namespace GuestBook.Services.Filters
         {
             var query = queryable;
 
+            if (!string.IsNullOrWhiteSpace(filter.Search))
+            {
+                var queryList = query.Where(p => p.Name.Contains(filter.Search)).ToList();
+
+                query.Where(p => p.Reviews.Where(r => r.Comment.Contains(filter.Search)).Count() != 0).ToList()
+                    .ForEach(q => queryList.Add(q));
+            }
+
             return Task.FromResult(query);
         }
     }

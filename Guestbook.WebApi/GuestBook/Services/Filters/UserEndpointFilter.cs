@@ -11,6 +11,11 @@ namespace GuestBook.Services.Filters
         {
             var query = queryable;
 
+            if (!string.IsNullOrWhiteSpace(filter.Search))
+            {
+                query = query.Where(p => p.Name.Contains(filter.Search));
+            }
+
             return Task.FromResult(query);
         }
     }

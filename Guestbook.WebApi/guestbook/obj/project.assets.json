@@ -12589,11 +12589,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\rash2\\Documents\\guestBook\\Guestbook.WebApi\\GuestBook\\GuestBook.csproj",
+      "projectUniqueName": "C:\\Users\\rash2\\Desktop\\Новая папка\\GuestBook\\GuestBook.csproj",
       "projectName": "GuestBook",
-      "projectPath": "C:\\Users\\rash2\\Documents\\guestBook\\Guestbook.WebApi\\GuestBook\\GuestBook.csproj",
+      "projectPath": "C:\\Users\\rash2\\Desktop\\Новая папка\\GuestBook\\GuestBook.csproj",
       "packagesPath": "C:\\Users\\rash2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rash2\\Documents\\guestBook\\Guestbook.WebApi\\GuestBook\\obj\\",
+      "outputPath": "C:\\Users\\rash2\\Desktop\\Новая папка\\GuestBook\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

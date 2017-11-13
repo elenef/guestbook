@@ -2,6 +2,6 @@
 {
     public class ReviewFilterContract : BaseFilterContract
     {
-
+        public string Search { get; set; }
     }
 }

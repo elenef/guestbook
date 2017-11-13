@@ -9,14 +9,14 @@ C:\Users\rash2\Desktop\devschool2017-guestbook-57f18efc51a0\WebApi\GuestBook\Gue
 C:\Users\rash2\Desktop\devschool2017-guestbook-57f18efc51a0\WebApi\GuestBook\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.AssemblyInfo.cs
 C:\Users\rash2\Desktop\devschool2017-guestbook-57f18efc51a0\WebApi\GuestBook\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.dll
 C:\Users\rash2\Desktop\devschool2017-guestbook-57f18efc51a0\WebApi\GuestBook\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.pdb
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.csprojResolveAssemblyReference.cache
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.csproj.CoreCompileInputs.cache
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.AssemblyInfoInputs.cache
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.AssemblyInfo.cs
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.dll
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.pdb
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.deps.json
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.runtimeconfig.json
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.runtimeconfig.dev.json
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.dll
-C:\Users\rash2\Documents\guestBook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.pdb
+C:\Users\rash2\Desktop\Новая папка\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.deps.json
+C:\Users\rash2\Desktop\Новая папка\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.runtimeconfig.json
+C:\Users\rash2\Desktop\Новая папка\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.runtimeconfig.dev.json
+C:\Users\rash2\Desktop\Новая папка\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.dll
+C:\Users\rash2\Desktop\Новая папка\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.pdb
+C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.csprojResolveAssemblyReference.cache
+C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.csproj.CoreCompileInputs.cache
+C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.AssemblyInfoInputs.cache
+C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.AssemblyInfo.cs
+C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.dll
+C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.pdb
