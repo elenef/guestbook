@@ -17,7 +17,7 @@ export class PermissionService {
 
     isAvailable(action: string) {
         //User is not authorized
-        if (!this.authService.userProfile) {
+        if (this.authService.authorizationRequired) {
             return false;
         }
 

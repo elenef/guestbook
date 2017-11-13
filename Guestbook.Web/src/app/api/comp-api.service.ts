@@ -1,5 +1,5 @@
-﻿import { Observable, Subscriber } from 'rxjs/Rx';
-
+﻿import { MessageService } from './message.service';
+import { Observable, Subscriber } from 'rxjs/Rx';
 import { AuthorizationService } from './authorization.service';
 import { Http, Response, RequestOptionsArgs } from "@angular/http";
 import { Injectable, Optional } from "@angular/core";
@@ -7,7 +7,7 @@ import { Headers, RequestOptions } from '@angular/http';
 import { ErrorResponse } from './contracts'
 import { ApiService } from './api.service'
 import { BaseApiService } from './base-api.service'
-import { MessageService } from '../shared/services'
+
 @Injectable()
 /**
  * Service allow interacts with api and displays error through toaster
