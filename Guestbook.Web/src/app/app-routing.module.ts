@@ -9,7 +9,7 @@ import { PageDetailsComponent } from "./shared/components/page-details/page-deta
 const appRoutes: Routes = [
 
 
-  { path: '/',  component: , },
+  { path: '/'},
   { path: '**', redirectTo: '' }
 
 ];
