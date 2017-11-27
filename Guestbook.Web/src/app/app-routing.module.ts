@@ -1,3 +1,4 @@
+import { ReviewsListComponent } from './api/reviews-list/reviews-list.component';
 // tslint:disable-next-line:max-line-length
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +10,7 @@ import { PageDetailsComponent } from "./shared/components/page-details/page-deta
 const appRoutes: Routes = [
 
 
-  { path: '/'},
+  { path: '', component: ReviewsListComponent},
   { path: '**', redirectTo: '' }
 
 ];

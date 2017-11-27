@@ -1,3 +1,4 @@
+import { ReviewsListModule } from './api/reviews-list/reviews-list.module';
 import { CdkTableModule } from '@angular/cdk';
 import { PageDetailsComponent } from './shared/components/page-details/page-details.component';
 import { SharedModule } from './shared/shared.module';
@@ -41,7 +42,7 @@ import { ApiService } from './api/api.service';
     MdSidenavModule,
     MdDatepickerModule,
     MdNativeDateModule,
-
+    ReviewsListModule,
   ],
   providers: [
     MessageService, ConfirmationService, FilterService,
