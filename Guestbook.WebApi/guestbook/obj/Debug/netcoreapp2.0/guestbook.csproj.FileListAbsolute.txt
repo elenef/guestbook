@@ -20,3 +20,10 @@ C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\G
 C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.AssemblyInfo.cs
 C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.dll
 C:\Users\rash2\Desktop\Новая папка\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.pdb
+C:\Users\Katherine\Documents\guestbook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.deps.json
+C:\Users\Katherine\Documents\guestbook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.runtimeconfig.json
+C:\Users\Katherine\Documents\guestbook\Guestbook.WebApi\GuestBook\bin\Debug\netcoreapp2.0\GuestBook.runtimeconfig.dev.json
+C:\Users\Katherine\Documents\guestbook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.csprojResolveAssemblyReference.cache
+C:\Users\Katherine\Documents\guestbook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.AssemblyInfo.cs
+C:\Users\Katherine\Documents\guestbook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.dll
+C:\Users\Katherine\Documents\guestbook\Guestbook.WebApi\GuestBook\obj\Debug\netcoreapp2.0\GuestBook.pdb

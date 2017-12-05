@@ -1,5 +1,4 @@
-﻿import { MessageService } from './message.service';
-import { Observable, Subscriber } from 'rxjs/Rx';
+﻿import { Observable, Subscriber } from 'rxjs/Rx';
 import { AuthorizationService } from './authorization.service';
 import { Http, Response, RequestOptionsArgs } from "@angular/http";
 import { Injectable, Optional } from "@angular/core";
@@ -7,6 +6,7 @@ import { Headers, RequestOptions } from '@angular/http';
 import { ErrorResponse } from './contracts'
 import { ApiService } from './api.service'
 import { BaseApiService } from './base-api.service'
+import { MessageService } from "../shared/services/message.service";
 
 @Injectable()
 /**
@@ -15,12 +15,12 @@ import { BaseApiService } from './base-api.service'
 export class CompApiService implements ApiService {
     private HTTP_NOT_FOUND = 404;
     private requestsInProgress: number = 0;
-    id = Math.random();
+    id = Math.random(); 
 
     get loadInProgress(): boolean {
         return this.requestsInProgress > 0;
     }
-    lastError: ErrorResponse;
+    lastError: ErrorResponse; 
 
     constructor(
         private apiService: BaseApiService,

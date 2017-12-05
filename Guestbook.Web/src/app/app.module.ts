@@ -18,11 +18,12 @@ import { ApiModule } from './api/api.module';
 import {MdDatepickerModule, MdNativeDateModule } from '@angular/material';
 import { MdSortModule, MdSidenavModule } from '@angular/material';
 import { ApiService } from './api/api.service';
+import { UserModule } from "./users/user-details/user.module";
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +42,7 @@ import { ApiService } from './api/api.service';
     MdSidenavModule,
     MdDatepickerModule,
     MdNativeDateModule,
+    UserModule
 
   ],
   providers: [
