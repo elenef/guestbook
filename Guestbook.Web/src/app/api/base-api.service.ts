@@ -62,7 +62,9 @@ export class BaseApiService implements ApiService {
     private getHeaders(): Headers {
         let headers = new Headers({
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS, DETELE',
+            'Access-Control-Allow-Headers': '*'
         });
         return headers;
     }

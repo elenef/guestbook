@@ -7,4 +7,9 @@ export class ApiEndpoints {
         return  Config.apiUrl;
     }
 
+    static reviews(): ApiEndpoint {
+        return new ApiEndpointBase(ApiEndpoints.BaseApiUrl + '/reviews');
+    }
+
+
 }

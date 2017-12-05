@@ -9,6 +9,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using System.Buffers;
+using Microsoft.AspNetCore.Http;
 
 namespace GuestBook
 {
@@ -27,6 +31,14 @@ namespace GuestBook
             services.AddDbContext<DomainContext>(opt => opt.UseSqlServer(connectionString));
 
             services.AddMvc();
+
+            services.AddCors();
+
+            services.Configure<MvcOptions>(opt =>
+            {
+                opt.OutputFormatters.RemoveType<JsonOutputFormatter>();
+                opt.OutputFormatters.Add(new JsonOutputFormatter(Config.JsonSerializerSettings, ArrayPool<char>.Shared));
+            });
 
             services.AddScoped<IContractMapper, ContractMapper>();
 
@@ -47,6 +59,13 @@ namespace GuestBook
             }
 
             app.UseMvc();
+
+            
+            app.UseCors(builder =>
+               builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials());
         }
 
         private void AddRepositores(IServiceCollection services)
