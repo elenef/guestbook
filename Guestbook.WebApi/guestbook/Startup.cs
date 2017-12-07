@@ -91,8 +91,7 @@ namespace GuestBook
                 opt.GetService<EF7Repository<Restaurant>>(),
                 opt.GetService<IContractMapper>(),
                 opt.GetService<RestaurantEndpointFilter>(),
-                opt.GetService<EF7Repository<Review>>(),
-                opt.GetService<EF7Repository<User>>()));
+                opt.GetService<EF7Repository<Review>>()));
 
             services.AddScoped(opt => new ReviewEndpointService(
                 opt.GetService<EF7Repository<Review>>(),
