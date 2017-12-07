@@ -16,6 +16,11 @@ namespace GuestBook.Services.Filters
                 query = query.Where(p => p.Restaurant.Name.Contains(filter.Search));
             }
 
+            if (!string.IsNullOrWhiteSpace(filter.RestaurantIds))
+            {
+                query = query.Where(q => filter.RestaurantIds.DeserializeToList().Contains(q.Restaurant.Id));
+            }
+
             return Task.FromResult(query);
         }
     }
