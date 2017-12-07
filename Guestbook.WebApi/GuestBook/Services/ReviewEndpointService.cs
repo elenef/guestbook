@@ -53,10 +53,10 @@ namespace GuestBook.Services
 
         protected override async Task BeforeUpdate(EditReviewContract model, Review item)
         {
-            item.Restaurant = await _repositoryRestaurants.Items.Where(r => r.Id.Equals(model.RestaurantId))
+            item.Restaurant = await _repositoryRestaurants.Items.Where(r => r.Id.Equals(model.Restaurant.Id))
                 .FirstOrDefaultAsync();
 
-            item.User = await _repositoryUsers.Items.Where(r => r.Id.Equals(model.UserId))
+            item.User = await _repositoryUsers.Items.Where(r => r.Id.Equals(model.User.Id))
                 .FirstOrDefaultAsync();
 
             await base.BeforeUpdate(model, item);
