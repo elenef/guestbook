@@ -6,6 +6,6 @@ namespace GuestBook.Models.Contracts
     {
         public string Id { get; set; }
 
-        public List<ReviewContract> Reviews { get; set; }
+        public List<string> ReviewIds { get; set; }
     }
 }
