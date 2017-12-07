@@ -9,14 +9,30 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System.Buffers;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace GuestBook
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private IHostingEnvironment _environment;
+
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
+            _environment = env;
+
             Configuration = configuration;
+
+            var builder = new ConfigurationBuilder();
+            builder.SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -26,7 +42,14 @@ namespace GuestBook
             var connectionString = Configuration["Data:Database:ConnectionString"];
             services.AddDbContext<DomainContext>(opt => opt.UseSqlServer(connectionString));
 
-            services.AddMvc();
+            services.AddMvc()
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization();
+            services.Configure<MvcOptions>(opt =>
+            {
+                opt.OutputFormatters.RemoveType<JsonOutputFormatter>();
+                opt.OutputFormatters.Add(new JsonOutputFormatter(Config.JsonSerializerSettings, ArrayPool<char>.Shared));
+            });
 
             services.AddScoped<IContractMapper, ContractMapper>();
 
@@ -39,12 +62,22 @@ namespace GuestBook
             AddControllerServices(services);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole();
+            loggerFactory.AddDebug(LogLevel.Debug);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder =>
+                //builder.WithOrigins(Configuration["Data:AllowOriginFor"])
+                    builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
 
             app.UseMvc();
         }
