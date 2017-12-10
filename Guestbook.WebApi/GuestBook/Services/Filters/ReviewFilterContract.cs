@@ -4,6 +4,10 @@
     {
         public string Search { get; set; }
 
-        public string restaurantName { get; set; }
+        public string RestaurantName { get; set; }
+
+        public long DateFrom { get; set; }
+
+        public long DateTo { get; set; }
     }
 }
