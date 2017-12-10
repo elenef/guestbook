@@ -1,4 +1,4 @@
-import { ReviewsListModule } from './api/reviews-list/reviews-list.module';
+import { ReviewsListModule } from './reviews-list/reviews-list.module';
 import { CdkTableModule } from '@angular/cdk';
 import { PageDetailsComponent } from './shared/components/page-details/page-details.component';
 import { SharedModule } from './shared/shared.module';

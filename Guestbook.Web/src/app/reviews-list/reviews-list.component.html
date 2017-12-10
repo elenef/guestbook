@@ -1,0 +1,71 @@
+<div fxFill fxLayout="column">
+  <div fxflex="20%" fxLayout="row" class="header">
+    <div class="logo">
+      <div fxFill class="logo-img"></div>
+    </div>
+    <div class="header-content" fxLayout="column">
+      <div fxFlex="20%" class="mat-header-content-exit" fxLayout="row" fxLayoutAlign="end start">
+        <div>
+          <a class="mat-header-content-exit-text mat-header-content-exit-decoration" href="#">Иванов И.В.</a>
+          <a class="mat-header-content-exit-icon" href="#">
+            <md-icon class="mat-header-content-exit-icon-position">exit_to_app</md-icon>
+          </a>
+        </div>
+      </div>
+      <div fxFlex="20%" class="mat-header-content-title" fxLayout="row" fxLayoutAlign="center center">
+        Гостевая книга
+      </div>
+      <div fxFlex="30%">
+          <page-search  class="page-header-search" [search]="search" (searchChange)="onSearch($event)" placeholder="Введите для поиска..."></page-search>
+      </div>
+      <div fxFlex="30%">
+         Здесь будет компонент с фильтром по дате
+      </div>
+    </div>
+  </div>
+  <div fxflex="80%" fxLayout="row">
+    <div class="sidebar">
+      <md-list fxFill class="mat-sidebar">
+        <md-list-item fxFill *ngFor="let restaurant of restaurants">
+          <a fxFill class="mat-sidebar-item mat-sidebar-text" [routerLink]="['/reviews']" [queryParams]="{'restaurantName': restaurant.name}"
+            routerLinkActive="active">
+            <div style="margin-top:12px" fxLayout="row" fxLayoutGap="4px">
+              <div><i class="material-icons">store</i></div>
+              <div><span class="mat-sidebar-item-text mat-font-family">{{restaurant.name}}</span></div>
+            </div>
+          </a>
+        </md-list-item>
+      </md-list>
+    </div>
+    <div class="content">
+      <div fxFill class="mat-list" fxLayout="row" fxLayoutWrap fxLayoutGap="10px">
+        <md-card fxLayout="column" fxLayoutAlign="space-between none" *ngFor="let review of reviews" class="mat-list-card mat-list-card-background">
+          <md-card-header>
+            <div md-card-avatar class="mat-card-content-img" [style.background]="colors[getRandomInt(0,colors.length)]" fxLayout="row"
+              fxLayoutAlign="center center" class="mat-card-content-img-text mat-font-family">
+              <div>{{review.userName[0]}}</div>
+            </div>
+            <md-card-title class="mat-card-content-title mat-font-family">{{review.restaurantName}}</md-card-title>
+            <md-card-subtitle class="mat-card-content-sub-title mat-font-family">{{review.userName}}</md-card-subtitle>
+          </md-card-header>
+          <md-card-content class="mat-card-content-comment">
+            <p class="mat-card-content-text mat-font-family">
+              {{review.comment}}
+            </p>
+          </md-card-content>
+          <div fxLayout="row" fxLayoutAlign="space-between end">
+            <div fxLayout="row" fxLayoutGap="1px" fxLayoutAlign="center end">
+              <md-icon class="md-24 mat-card-content-icon" aria-label="icon-button with a clock icon">query_builder</md-icon>
+              <div class="mat-card-content-text mat-font-family">{{review.created | unixdate}}</div>
+            </div>
+            <div md-card-actions>
+              <button md-icon-button color="warn" (click)="onLikeReview(review)">
+                  <md-icon class="md-24 mat-card-content-icon-favorite" aria-label="icon-button with a heart icon">favorite</md-icon>
+              </button>
+            </div>
+          </div>
+        </md-card>
+      </div>
+    </div>
+  </div>
+</div>

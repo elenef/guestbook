@@ -4,6 +4,9 @@ export class Review {
     comment: string;
     restaurantId: string;
     userId: string;
+    restaurantName: string;
+    userName: string;
+    like: number;
 
     constructor(data: any) {
         if (data) {
