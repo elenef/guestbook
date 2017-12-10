@@ -3,7 +3,7 @@ export class User {
     name: string;
     login: string;
     email: string;
-    phones: string;
+    phone: string;
     password: string;
 
     constructor(data?: any) {
@@ -16,7 +16,7 @@ export class User {
         return {
             name: this.name,
             login: this.login,
-            phones: this.phones,
+            phone: this.phone,
             email: this.email,
             password: this.password,
         }

@@ -44,6 +44,11 @@ export class UserDetailsComponent extends PageDetailsComponent<User> implements 
     );
   }
 
+  onShowPasswordFiels() {
+    this.model.password = null;
+    this.passwordButtonVisible = false;
+  }
+
   onSave(form: FormGroup) {
     if (form.valid &&
       !this.emailFormControl.hasError('pattern') &&

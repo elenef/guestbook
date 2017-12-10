@@ -19,7 +19,7 @@
 
         <span class="details-text-margin">Имя</span>
         <md-input-container floatPlaceholder="never">
-            <input mdInput type="text" placeholder="Иван Иванов" [(ngModel)]="review.name" name="name" #name="ngModel" required minlength="3"
+            <input mdInput type="text" placeholder="Иван Иванов" [(ngModel)]="review.userName" name="name" #name="ngModel" required minlength="3"
                 maxlength="30">
             <md-error [hidden]="name.valid || name.hasError('minlength')">
                 Не указано имя пользователя

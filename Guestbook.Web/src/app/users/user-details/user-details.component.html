@@ -42,9 +42,9 @@
 
             <div fxLayout="column">
                 <span class="details-text-margin">Телефон</span>
-                <!--<phone-number [registrationColor]="registrationColor" phoneName="phone1" required maxlength="10" minlength="10" [disabled]="disabled"
+                <phone-number  phoneName="phone1" required maxlength="10" minlength="10" 
             [showPhoneField]="'true'" [(phoneField)]="model.phone" placeholder="9994576146">
-        </phone-number>-->
+        </phone-number>
             </div>
 
             <div *ngIf="showPasswordFields" fxLayout="column">
@@ -72,9 +72,9 @@
             </div>
         </div>
 
-        <div fxLayout="column" fxLayoutGap="1.5em">
+        <div fxLayout="column" >
             <div *ngIf="!showPasswordFields">
-                <button style="width:160px;" type="button" (click)="showPasswordFields = true" md-button>Изменить пароль</button>
+                <button style="width:160px; margin: 10px 0px" type="button" (click)="onShowPasswordFiels()" md-button>Изменить пароль</button>
             </div>
             <div>
                 <button style="width:200px;" type="submit" color="accent" md-raised-button>Сохранить пользователя</button>
