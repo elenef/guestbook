@@ -15,12 +15,12 @@ import { MessageService } from "../shared/services/message.service";
 export class CompApiService implements ApiService {
     private HTTP_NOT_FOUND = 404;
     private requestsInProgress: number = 0;
-    id = Math.random(); 
+    id = Math.random();
 
     get loadInProgress(): boolean {
         return this.requestsInProgress > 0;
     }
-    lastError: ErrorResponse; 
+    lastError: ErrorResponse;
 
     constructor(
         private apiService: BaseApiService,
@@ -119,7 +119,7 @@ export class CompApiService implements ApiService {
     private showErrorMessage(response: Response) {
         let error = null;
         if (response != null) {
-            if(response.json) {
+            if (response.json) {
                 error = <ErrorResponse>response.json();
             } else {
                 error = new ErrorResponse();

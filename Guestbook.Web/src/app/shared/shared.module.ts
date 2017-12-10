@@ -1,3 +1,5 @@
+import { PageSearchComponent } from './components/page-search/page-search.component';
+import { UnixDatePipe } from './pipes/unix-date.pipe';
 
 
 import { NgModule } from '@angular/core';
@@ -27,10 +29,14 @@ import { PhoneNumberComponent} from "./components/index";
     AppRoutingModule
     ],
   declarations: [
-    PhoneNumberComponent
+    PhoneNumberComponent,
+     UnixDatePipe,
+    PageSearchComponent
     ],
   exports: [
-    PhoneNumberComponent
+    PhoneNumberComponent,
+    UnixDatePipe,
+    PageSearchComponent
     ],
 })
 export class SharedModule { }

@@ -1,2 +1,257 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.main {
+  margin: 0;
+  background: url("assets/phon3.jpg") no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mat-raised-button {
+  box-shadow: none !important;
+  height: 33px !important;
+  background: #198cc7;
+}
+
+.page-header-search {
+  color: black;
+}
+
+.mat-input-wrapper {
+  padding: 0 !important;
+}
+
+.md-input-container-search .mat-input-suffix {
+  width: 34px !important;
+  font-size: 14px !important;
+}
+
+.page-search .mat-input-wrapper,
+.page-search .mat-input-container {
+  width: 100% !important;
+  height: 25px !important;
+}
+
+.page-search {
+  padding-left: 1px !important;
+  padding-right: 16px !important;
+}
+
+.buyer-img {
+  width: 80px;
+  height: 50px;
+}
+
+.menu-profile-title-icon {
+  min-width: 26px;
+  min-height: 26px;
+  width: 26px;
+  height: 26px;
+}
+
+.menu-icon-color {
+  color: white !important;
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+}
+
+.page-header-container {
+  height: 50px;
+}
+
+.page-content {
+  padding: 20px;
+}
+
+.mat-header-row {
+  background-color: #029B86 !important;
+  border: none !important;
+  border-bottom: 1px #FFFFFF solid !important;
+  height: 40px !important;
+}
+
+md-row,
+md-header-row {
+  font-family: 'Roboto-Regular', 'Arial', 'Times New Roman' !important;
+  font-weight: normal !important;
+  font-size: 15px !important;
+}
+
+.mat-sort-header-container {
+  color: #f6f6f6 !important;
+  font-size: 15px !important;
+}
+
+.mat-elevation-z8 {
+  box-shadow: none !important;
+}
+
+.mat-input-flex,
+.mat-select {
+  background: white !important;
+  border: 1px solid #5EC0B6 !important;
+}
+
+.mat-input-ripple,
+.mat-select-underline,
+.mat-input-underline {
+  opacity: 0 !important;
+}
+
+.mat-input-infix,
+.mat-input-placeholder,
+.mat-select-placeholder,
+.mat-select-value-text {
+  border-top: none !important;
+  padding: 0.4em 0.8em !important;
+}
+
+.mat-input-placeholder {
+  top: 0.9em !important;
+  color: #8f9ca3 !important;
+}
+
+.mat-select-trigger,
+.mat-select-arrow {
+  color: #8f9ca3 !important;
+  font-size: 14px !important;
+}
+
+.mat-input-suffix {
+  margin: auto !important;
+}
+
+.mat-input-container,
+.mat-select {
+  width: 180px !important;
+}
+
+.mat-input-container {
+  height: 44px !important;
+  max-height: 44px !important;
+}
+
+.mat-select {
+  margin-bottom: 0.8em !important;
+}
+
+.mat-select-content {
+  overflow-y: scroll !important;
+  transform-origin: 50% 24px 0px;
+  opacity: 1;
+  min-width: calc(100% + 32px);
+  transform: scaleY(1);
+  max-height: 250px;
+  border: 1px solid #cfdad9 !important;
+}
+
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
+  background: #198cc7 !important;
+  color: white !important;
+}
+
+
+
+.mat-select-panel ::-webkit-scrollbar {
+  width: 30px !important;
+  border-left: 1px solid #cfdad9 !important;
+}
+
+.mat-select-panel ::-webkit-scrollbar-button {
+  background-size: 12px !important;
+  background-position: center !important;
+  height: 26px !important;
+  width: 26px !important;
+}
+
+.mat-paginator-page-size-label,
+.mat-paginator-range-label,
+.mat-paginator-increment,
+.mat-paginator-decrement {
+  margin-bottom: 10px !important;
+}
+
+.mat-select-panel {
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+.mat-select-content {
+  border: 1px solid #cfdad9 !important;
+  min-width: 50px !important;
+}
+
+.md-input-container-gray {
+  width: 400px !important;
+}
+
+.md-input-container-gray .mat-input-infix {
+  background: #FFFFFF !important;
+}
+
+.md-input-container-gray .mat-input-suffix {
+  width: 60px !important;
+  font-size: 12px !important;
+  font-family: 'Roboto-Regular', 'Arial', 'Times New Roman' !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  height: 100% !important;
+  background: #1CDFCE !important;
+  color: white !important;
+}
+
+.md-input-container-gray .mat-input-suffix:hover {
+  cursor: pointer !important;
+}
+
+.md-input-container-gray .mat-input-suffix div {
+  position: relative !important;
+  top: 20% !important;
+}
+
+.mat-input-flex {
+  height: 31.2px !important;
+}
+
+.md-input-container-search {
+  width: 200px !important;
+}
+
+.md-input-container-search .mat-input-suffix {
+  width: 34px !important;
+  font-size: 14px !important;
+}
+
+
+
+
+.table-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  font-size: 20px;
+}
+
+.table-header {
+  min-height: 64px;
+  display: flex;
+  align-items: baseline;
+  padding: 8px 24px 0;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+.mat-input-container {
+  font-size: 14px;
+  flex-grow: 1;
+}

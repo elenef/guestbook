@@ -1,3 +1,4 @@
+
 import { CdkTableModule } from '@angular/cdk';
 import { PageDetailsComponent } from './shared/components/page-details/page-details.component';
 import { SharedModule } from './shared/shared.module';
