@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace GuestBook.Repositories
+namespace GuestBook.Data
 {
     /// <summary>
     /// Represents abstraction of data storage

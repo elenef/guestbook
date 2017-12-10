@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using GuestBook.Helpers;
-using GuestBook.Models;
-using GuestBook.Models.Contracts;
+using GuestBook.Domain;
+using GuestBook.Domain.Helpers;
+using GuestBook.WebApi.Contracts;
 
-namespace GuestBook.Mapper
+namespace GuestBook.WebApi.Mapper
 {
     public class MapperProfile : Profile
     {

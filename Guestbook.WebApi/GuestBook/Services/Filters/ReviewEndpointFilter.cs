@@ -1,8 +1,9 @@
-﻿using GuestBook.Models;
+﻿using GuestBook.Domain;
+using GuestBook.Domain.Helpers;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GuestBook.Services.Filters
+namespace GuestBook.WebApi.Services.Filters
 {
     public class ReviewEndpointFilter : BaseEndpoinFilter<ReviewFilterContract, Review>
     {

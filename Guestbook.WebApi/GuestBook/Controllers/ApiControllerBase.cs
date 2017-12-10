@@ -1,10 +1,10 @@
-﻿using GuestBook.Models.Contracts;
-using GuestBook.Services;
+﻿using GuestBook.WebApi.Contracts;
+using GuestBook.WebApi.Services;
+using GuestBook.WebApi.Services.Filters;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using GuestBook.Services.Filters;
 
-namespace GuestBook.Controllers
+namespace GuestBook.WebApi.Controllers
 {
     public class ApiControllerBase<TContract, TEditContract, TFilterContract, TDataModel> :
         ReadonlyApiControllerBase<TContract, TEditContract, TFilterContract, TDataModel>

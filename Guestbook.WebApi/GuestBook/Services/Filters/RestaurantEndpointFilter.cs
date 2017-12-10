@@ -1,8 +1,8 @@
-﻿using GuestBook.Models;
+﻿using GuestBook.Domain;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GuestBook.Services.Filters
+namespace GuestBook.WebApi.Services.Filters
 {
     public class RestaurantEndpointFilter : BaseEndpoinFilter<RestaurantFilterContract, Restaurant>
     {

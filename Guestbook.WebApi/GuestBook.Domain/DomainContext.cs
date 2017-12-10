@@ -1,7 +1,6 @@
-﻿using GuestBook.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace GuestBook
+namespace GuestBook.Domain
 {
     public class DomainContext : DbContext
     {

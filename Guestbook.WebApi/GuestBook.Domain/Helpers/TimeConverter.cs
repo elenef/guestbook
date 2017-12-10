@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GuestBook.Helpers
+namespace GuestBook.Domain.Helpers
 {
     /// <summary>
     /// Класс конвертер времени из разных форматов.

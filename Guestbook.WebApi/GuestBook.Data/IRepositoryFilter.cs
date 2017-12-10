@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace GuestBook.Repositories
+namespace GuestBook.Data
 {
     public interface IRepositoryFilter
     {

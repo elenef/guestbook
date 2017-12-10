@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GuestBook
+namespace GuestBook.Data
 {
     public class IdentityGenerator
     {

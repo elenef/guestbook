@@ -1,15 +1,14 @@
-﻿using System;
-using GuestBook.Services.Filters;
-using GuestBook.Mapper;
-using GuestBook.Models;
-using GuestBook.Models.Contracts;
-using GuestBook.Repositories;
+﻿using GuestBook.Data;
+using GuestBook.WebApi.Contracts;
+using GuestBook.WebApi.Mapper;
+using GuestBook.WebApi.Services.Filters;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GuestBook.Services
+namespace GuestBook.WebApi.Services
 {
     public class EndpointService<TContract, TEditContract, TFilterContract, TDataModel, TFilter>
         : IEndpointService<TContract, TEditContract, TFilterContract, TDataModel>

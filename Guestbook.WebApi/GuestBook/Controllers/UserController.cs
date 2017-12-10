@@ -1,10 +1,10 @@
-﻿using GuestBook.Models;
-using GuestBook.Models.Contracts;
-using GuestBook.Services;
-using GuestBook.Services.Filters;
+﻿using GuestBook.Domain;
+using GuestBook.WebApi.Contracts;
+using GuestBook.WebApi.Services;
+using GuestBook.WebApi.Services.Filters;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GuestBook.Controllers
+namespace GuestBook.WebApi.Controllers
 {
     [Route("/users")]
     public class UserController : ApiControllerBase<UserContract, EditUserContract, UserFilterContract, User>

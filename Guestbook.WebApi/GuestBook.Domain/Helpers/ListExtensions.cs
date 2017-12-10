@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GuestBook
+namespace GuestBook.Domain.Helpers
 {
     public static class ListExtensions
     {
