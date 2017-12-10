@@ -4,8 +4,8 @@
     {
         public string Comment { get; set; }
 
-        public RestaurantContract Restaurant { get; set; }
+        public string RestaurantId { get; set; }
 
-        public UserContract User { get; set; }
+        public string UserId { get; set; }
     }
 }
