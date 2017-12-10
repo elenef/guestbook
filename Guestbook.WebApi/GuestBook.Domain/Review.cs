@@ -21,7 +21,13 @@ namespace GuestBook.Domain
         public Restaurant Restaurant { get; set; }
 
         [Required]
-        public User User { get; set; }
+        public string UserName { get; set; }
+
+        [Required]
+        public int RatingRestaurant { get; set; }
+
+        [Required]
+        public int Like { get; set; }
 
         public Review()
         {

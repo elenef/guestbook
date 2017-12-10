@@ -22,7 +22,11 @@ namespace GuestBook.Domain
         [StringLength(255, MinimumLength = 1)]
         public string Address { get; set; }
 
+        public float Rating { get; set; }
+
         [Required]
+        public User Users { get; set; }
+
         public List<Review> Reviews { get; set; }
 
         public Restaurant()
