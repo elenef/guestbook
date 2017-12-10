@@ -657,6 +657,34 @@ md-header-cell{
  }
 
  .page-content-padding {padding-left: 20px;}
+
+ app-review-details-dialog .text-area .mat-input-infix{
+      padding: 0px!important;
+      height: 100px!important;
+ }
+
+ app-review-details-dialog .text-area .mat-input-flex{
+      height: 100px!important;
+      border: 0px!important;
+ }
+
+  app-review-details-dialog .text-area .mat-input-container{
+      height: 100px!important;
+      max-height: 100px!important;
+ }
+
+  app-review-details-dialog textarea{
+      height: 100px!important;
+      max-height: 100px!important;
+ }
+
+   app-review-details-dialog .text-area{
+      height: 100px!important;
+      max-height: 100px!important;
+ }
+
+
+ 
  
  
  

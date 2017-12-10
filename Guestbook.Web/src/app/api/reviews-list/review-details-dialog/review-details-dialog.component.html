@@ -1,13 +1,68 @@
 <div class="title-page">Создание отзыва
 </div>
 
-<form  class="form-container" (submit)="onSave(detailsForm)" #detailsForm="ngForm" fxLayoutGap="2em">
+<form class="form-container" (submit)="onCreateReview(detailsForm)" #detailsForm="ngForm" fxLayoutGap="2em">
     <div fxLayout="column" fxLayoutGap="0.2em">
 
+        <div  fxLayout="row" fxLayoutGap="5px">
+        <span class="details-text-margin rating-text">Как вы оцените ресторан?</span>
+
+        <div class="rating" >
+            <span [hidden] = "true" [class.fill-color] = "review.ratingRestaurant == 5">&#9734;</span>
+            <span (click)="review.ratingRestaurant = 5" [class.fill-color] = "review.ratingRestaurant == 4">&#9734;</span>
+            <span (click)="review.ratingRestaurant = 4" [class.fill-color] = "review.ratingRestaurant == 3">&#9734;</span>
+            <span (click)="review.ratingRestaurant = 3" [class.fill-color] = "review.ratingRestaurant == 2">&#9734;</span>
+            <span (click)="review.ratingRestaurant = 2" [class.fill-color] = "review.ratingRestaurant == 1">&#9734;</span>
+            <span (click)="review.ratingRestaurant = 1" [class.fill-color] = "review.ratingRestaurant == 0 ">&#9734;</span>
+        </div>
+        </div>
+
+        <span class="details-text-margin">Имя</span>
+        <md-input-container floatPlaceholder="never">
+            <input mdInput type="text" placeholder="Иван Иванов" [(ngModel)]="review.name" name="name" #name="ngModel" required minlength="3"
+                maxlength="30">
+            <md-error [hidden]="name.valid || name.hasError('minlength')">
+                Не указано имя пользователя
+            </md-error>
+            <md-error [hidden]="!name.hasError('minlength')">
+                В имени должно быть как минимум 3 символа
+            </md-error>
+        </md-input-container>
+
+        <span class="details-text-margin">Email</span>
+        <md-input-container floatPlaceholder="never">
+            <input mdInput type="email" [formControl]="emailFormControl" placeholder="Email" [(ngModel)]="review.email" name="email"
+                maxlength="50" required>
+            <md-error *ngIf="emailFormControl.hasError('pattern')">
+                Введите валидный email
+            </md-error>
+            <md-error *ngIf="emailFormControl.hasError('required')">
+                Не указан email
+            </md-error>
+        </md-input-container>
+
+        <span class="details-text-margin">Ресторан</span>
+        <md-select floatPlaceholder="never" name="restaurantName" #restaurantName="ngModel" required placeholder="Ресторан" [(ngModel)]="review.restaurantId">
+            <md-option *ngFor="let restaurant of restaurantList" [value]="restaurant.id" required>
+                {{ restaurant.name }}
+            </md-option>
+        </md-select>
+
+        <span class="details-text-margin">Отзыв</span>
+        <md-input-container class="text-area">
+            <textarea mdInput name="comment" [(ngModel)]="review.comment" #comment="ngModel" minlength="6" maxlength="1000" required></textarea>
+            <md-error [hidden]="comment.valid || comment.hasError('minlength')">
+                Не указан отзыв
+            </md-error>
+            <md-error [hidden]="!comment.hasError('minlength')">
+                Отзыв должен содержать минимум 6 символов
+            </md-error>
+        </md-input-container>
 
 
-        <div>
-            <button style="width:200px;" type="submit" color="accent" md-raised-button>Сохранить пользователя</button>
+        <div fxLayoutAlign="end end" fxLayoutGap="5px" class="options-container">
+            <button (click)="onCancel()" class="cancel-btn" md-raised-button>Отмена</button>
+            <button class="accept-btn" type="submit" color="accent" md-raised-button>Отправить отзыв</button>
         </div>
     </div>
 

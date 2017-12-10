@@ -15,4 +15,8 @@ export class ApiEndpoints {
         return new ApiEndpointBase(ApiEndpoints.BaseApiUrl + '/reviews');
     }
 
+    static restaurants(): ApiEndpoint {
+        return new ApiEndpointBase(ApiEndpoints.BaseApiUrl + '/restaurants');
+    }
+
 }
