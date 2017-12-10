@@ -1,8 +1,0 @@
-**/*/obj/*
-**/*/bin/*
-*.user
-*.lock.json
-.vs/*
-packages/*
-*/packages/*
-*/node_modules/*

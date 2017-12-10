@@ -51,3 +51,13 @@ src/environments/*.js
 src/environments/*.map
 src/.vscode/symbols.json
 package-lock.json
+
+# GuestBook.WebApi files
+**/*/obj/*
+**/*/bin/*
+*.user
+*.lock.json
+.vs/*
+packages/*
+*/packages/*
+*/node_modules/*
