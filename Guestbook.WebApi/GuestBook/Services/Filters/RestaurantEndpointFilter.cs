@@ -15,8 +15,8 @@ namespace GuestBook.WebApi.Services.Filters
             {
                 var queryList = query.Where(p => p.Name.Contains(filter.Search)).ToList();
 
-                query.Where(p => p.Reviews.Where(r => r.Comment.Contains(filter.Search)).Count() != 0).ToList()
-                    .ForEach(q => queryList.Add(q));
+                /*query.Where(p => p.Reviews.Where(r => r.Comment.Contains(filter.Search)).Count() != 0).ToList()
+                    .ForEach(q => queryList.Add(q));*/
             }
 
             return Task.FromResult(query);
