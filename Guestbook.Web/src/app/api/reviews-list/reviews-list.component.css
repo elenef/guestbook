@@ -13,19 +13,19 @@ body {
 
 
 
-.mat-list {
-  padding-left: 10px;
-}
+
 
 .list {
   min-height: 100% !important;
   height: 100%;
+
+
 }
 
 .mat-list-card{
   border: 1px solid #FFFFFF;
   background: rgba(255, 255, 255, 1);
-  
+
 }
 
 .mat-list-card-background:hover{
@@ -75,7 +75,7 @@ a {
 }
 
 .mat-list-card {
-  width: 47%;
+  width: 49%;
   margin-bottom: 10px !important;
 
 }
@@ -92,3 +92,19 @@ a {
 
 
 
+.header{
+  width: 100%;
+  min-height: 150px;
+  height: 30%;
+
+}
+.sidebar{
+  padding-top: 4px;
+  width: 20%;
+  height: 100%;
+}
+.content{
+  padding: 4px;
+  width: 80%;
+  height: 100%;
+}
