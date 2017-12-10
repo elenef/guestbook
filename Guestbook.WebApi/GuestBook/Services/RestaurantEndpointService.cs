@@ -14,19 +14,14 @@ namespace GuestBook.Services
     {
         private IRepository<Review> _repositoryReview;
 
-        private IRepository<User> _repositoryUser;
-
         public RestaurantEndpointService(
             IRepository<Restaurant> repository,
             IContractMapper mapper,
             RestaurantEndpointFilter filter,
-            IRepository<Review> repositoryReview,
-            IRepository<User> repositoryUser)
+            IRepository<Review> repositoryReview)
             : base(repository, mapper, filter)
         {
             _repositoryReview = repositoryReview;
-
-            _repositoryUser = repositoryUser;
         }
 
         protected override async Task AfterMapAsync(List<Restaurant> model, List<RestaurantContract> contract)
@@ -37,7 +32,7 @@ namespace GuestBook.Services
 
                 var listReview = _mapper.Map<List<Review>, List<ReviewContract>>(review);
 
-                c.Reviews = listReview;
+                c.ReviewIds = listReview.Select(r => r.Id).ToList();
             }
         }
 

@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GuestBook.Mapper;
+﻿using GuestBook.Mapper;
 using GuestBook.Models;
 using GuestBook.Models.Contracts;
 using GuestBook.Repositories;
 using GuestBook.Services.Filters;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GuestBook.Services
 {
@@ -29,7 +29,9 @@ namespace GuestBook.Services
 
         protected override IQueryable<Review> GetListQuery()
         {
-            return _repository.Items.Include(i => i.Restaurant).Include(i => i.User);
+            return _repository.Items
+                .Include(i => i.Restaurant)
+                .Include(i => i.User);
         }
 
         public override async Task<ItemList<ReviewContract>> ListAsync(ReviewFilterContract filterModel)

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Threading.Tasks;
 
 namespace GuestBook.Services.Filters
@@ -15,7 +16,7 @@ namespace GuestBook.Services.Filters
             {
                 queryable = queryable.Skip(filter.Page * pageSize);
             }
-            return queryable.Take(pageSize).ToList(); //Take(pageSize).ToListAsync();
+            return queryable.Take(pageSize).ToList(); //.ToListAsync();
         }
 
         /// <summary>
@@ -29,7 +30,7 @@ namespace GuestBook.Services.Filters
         public virtual Task<IQueryable<TDataModel>> ApplyAsync(IQueryable<TDataModel> queryable, TFilterContract filter)
         {
             var query = queryable;
-            /*var order = filter.OrderDesc ? "DESC" : "ASC";
+            var order = filter.OrderDesc ? "DESC" : "ASC";
             if (!string.IsNullOrEmpty(filter.OrderBy))
             {
                 query = query.OrderBy(filter.OrderBy, order); //OrderBy($"{filter.OrderBy} {order}");
@@ -53,7 +54,7 @@ namespace GuestBook.Services.Filters
                     : (hasIdField ? idField : firstProperty);
 
                 query = query.OrderBy(orderProperty);
-            }*/
+            }
 
             return Task.FromResult(query);
         }

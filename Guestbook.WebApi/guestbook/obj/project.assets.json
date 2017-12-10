@@ -3613,6 +3613,15 @@
           "lib/netstandard1.6/System.Linq.dll": {}
         }
       },
+      "System.Linq.Dynamic/1.0.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Linq.Dynamic.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Linq.Dynamic.dll": {}
+        }
+      },
       "System.Linq.Expressions/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -6379,7 +6388,7 @@
       ]
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {
-      "sha512": "FEHHgHeomZ8KIgDpeE4hPki+sZFec8ZgmFEKzwH31exy994VY8UxS+bZXHS+K3o4PvP8Ny1uX2R0bqvpWiwhNA==",
+      "sha512": "eUdJ0Q/GfVyUJc0Jal5L1QZLceL78pvEM9wEKcHeI24KorqMDoVX+gWsMGLulQMfOwsUaPtkpQM2pFERTzSfSg==",
       "type": "package",
       "path": "microsoft.extensions.dependencyinjection.abstractions/2.0.0",
       "files": [
@@ -7706,15 +7715,15 @@
       ]
     },
     "runtime.native.System.Net.Security/4.3.0": {
-      "sha512": "YtbyKPhurOVI+c0Z1IcQjknQ0eBGZ0aX6lljx4TfDnhToAujO4LIFKSzrIBDHxaYi5TXid+kOzKWZ7oJmGQ9Mw==",
+      "sha512": "M2nN92ePS8BgQ2oi6Jj3PlTUzadYSIWLdZrHY1n1ZcW9o4wAQQ6W+aQ2lfq1ysZQfVCgDwY58alUdowrzezztg==",
       "type": "package",
       "path": "runtime.native.system.net.security/4.3.0",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "runtime.native.system.net.security.4.3.0.nupkg.sha512",
-        "runtime.native.system.net.security.nuspec"
+        "runtime.native.System.Net.Security.4.3.0.nupkg.sha512",
+        "runtime.native.System.Net.Security.nuspec"
       ]
     },
     "runtime.native.System.Security.Cryptography.Apple/4.3.0": {
@@ -8842,7 +8851,7 @@
       ]
     },
     "System.Diagnostics.StackTrace/4.3.0": {
-      "sha512": "6/mykOXbYcwWkrmDBz61bddKC78PDG/4f5njmLnYmcNpxjj1NleXuVqrI9FDmitwMTmSNScB//DeqyovNMAi2A==",
+      "sha512": "BiHg0vgtd35/DM9jvtaC1eKRpWZxr0gcQd643ABG7GnvSlf5pOkY2uyd42mMOJoOmKvnpNj0F4tuoS1pacTwYw==",
       "type": "package",
       "path": "system.diagnostics.stacktrace/4.3.0",
       "files": [
@@ -9555,6 +9564,17 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "System.Linq.Dynamic/1.0.7": {
+      "sha512": "BxEYab1SCgaqElLv57DrfPyi3ksK1Pbk5eXfwkXRZOdlC4aFT03QRkPEbYFBnFPnxhoLlc/Rg2b8vL0ffYSYWA==",
+      "type": "package",
+      "path": "system.linq.dynamic/1.0.7",
+      "files": [
+        "NuGet.exe",
+        "lib/net40/System.Linq.Dynamic.dll",
+        "system.linq.dynamic.1.0.7.nupkg.sha512",
+        "system.linq.dynamic.nuspec"
+      ]
+    },
     "System.Linq.Expressions/4.3.0": {
       "sha512": "PGKkrd2khG4CnlyJwxwwaWWiSiWFNBGlgXvJpeO0xCXrZ89ODrQ6tjEWS/kOqZ8GwEOUATtKtzp1eRgmYNfclg==",
       "type": "package",
@@ -9775,10 +9795,12 @@
       ]
     },
     "System.Net.NameResolution/4.3.0": {
-      "sha512": "CzpEIQuN/WcWbkXNmTj23GzVljxPN8IAtltToxiAghDm2q2+Z0PZqRnxtuQ/lYF2hmOfGzu7p5sXUZs6kp4+pw==",
+      "sha512": "AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
       "type": "package",
       "path": "system.net.nameresolution/4.3.0",
       "files": [
+        "System.Net.NameResolution.4.3.0.nupkg.sha512",
+        "System.Net.NameResolution.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9809,9 +9831,7 @@
         "runtimes/unix/lib/netstandard1.3/System.Net.NameResolution.dll",
         "runtimes/win/lib/net46/System.Net.NameResolution.dll",
         "runtimes/win/lib/netcore50/System.Net.NameResolution.dll",
-        "runtimes/win/lib/netstandard1.3/System.Net.NameResolution.dll",
-        "system.net.nameresolution.4.3.0.nupkg.sha512",
-        "system.net.nameresolution.nuspec"
+        "runtimes/win/lib/netstandard1.3/System.Net.NameResolution.dll"
       ]
     },
     "System.Net.Primitives/4.3.0": {
@@ -9892,10 +9912,12 @@
       ]
     },
     "System.Net.Security/4.3.0": {
-      "sha512": "JMVPH7O01G5vcIUy5IGWWJEbNNIAwckSaaieWIibFV5VmmPDlPkpbq1zJt6O84mQ06w2LaraWkb1DKN0gvxeLw==",
+      "sha512": "IgJKNfALqw7JRWp5LMQ5SWHNKvXVz094U6wNE3c1i8bOkMQvgBL+MMQuNt3xl9Qg9iWpj3lFxPZEY6XHmROjMQ==",
       "type": "package",
       "path": "system.net.security/4.3.0",
       "files": [
+        "System.Net.Security.4.3.0.nupkg.sha512",
+        "System.Net.Security.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9926,9 +9948,7 @@
         "runtimes/unix/lib/netstandard1.6/System.Net.Security.dll",
         "runtimes/win/lib/net46/System.Net.Security.dll",
         "runtimes/win/lib/netstandard1.3/System.Net.Security.dll",
-        "runtimes/win7/lib/netcore50/_._",
-        "system.net.security.4.3.0.nupkg.sha512",
-        "system.net.security.nuspec"
+        "runtimes/win7/lib/netcore50/_._"
       ]
     },
     "System.Net.Sockets/4.3.0": {
@@ -11017,7 +11037,7 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
-      "sha512": "3kicgs+dc1KrHP08qiomlho5kvH08cRqBqNWl5kYqYXnEtCHknBa1lozWw7PgViYyQw0gdyve1BkLcEnWwpDqw==",
+      "sha512": "Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
@@ -12003,7 +12023,7 @@
       ]
     },
     "System.Threading.Tasks.Parallel/4.3.0": {
-      "sha512": "YteQVpcTyvmpJ6lfyiue9lsXj4m8Ml6dhSH8coStSXEnXvlOrlo7s84SPyI3rLFipQts3dM+X0hu/SuBfiMZPw==",
+      "sha512": "cbjBNZHf/vQCfcdhzx7knsiygoCKgxL8mZOeocXZn5gWhCdzHIq6bYNKWX0LAJCWYP7bds4yBK8p06YkP0oa0g==",
       "type": "package",
       "path": "system.threading.tasks.parallel/4.3.0",
       "files": [
@@ -12058,10 +12078,12 @@
       ]
     },
     "System.Threading.Thread/4.3.0": {
-      "sha512": "JgMu9bbwM9LoRR1X/P+a9ZgtJPGIo5fC4dB8lpq6dx75wooBk79fpQ/p9iYAAmwmQxW76yI9E21W+0Xu8G+R8w==",
+      "sha512": "OHmbT+Zz065NKII/ZHcH9XO1dEuLGI1L2k7uYss+9C1jLxTC9kTZZuzUOyXHayRk+dft9CiDf3I/QZ0t8JKyBQ==",
       "type": "package",
       "path": "system.threading.thread/4.3.0",
       "files": [
+        "System.Threading.Thread.4.3.0.nupkg.sha512",
+        "System.Threading.Thread.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12090,16 +12112,16 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.thread.4.3.0.nupkg.sha512",
-        "system.threading.thread.nuspec"
+        "ref/xamarinwatchos10/_._"
       ]
     },
     "System.Threading.ThreadPool/4.3.0": {
-      "sha512": "Ts1IIccq9P6MHskm2ybldDQiy28YTlYPz0MLi2odhv0tJ4Wou089bpE0V5d9q/lcz1Z8t7qm71lmKc//RMtFUA==",
+      "sha512": "k/+g4b7vjdd4aix83sTgC9VG6oXYKAktSfNIJUNGxPEj7ryEOfzHHhfnmsZvjxawwcD9HyWXKCXmPjX8U4zeSw==",
       "type": "package",
       "path": "system.threading.threadpool/4.3.0",
       "files": [
+        "System.Threading.ThreadPool.4.3.0.nupkg.sha512",
+        "System.Threading.ThreadPool.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12128,9 +12150,7 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.threadpool.4.3.0.nupkg.sha512",
-        "system.threading.threadpool.nuspec"
+        "ref/xamarinwatchos10/_._"
       ]
     },
     "System.Threading.Timer/4.3.0": {
@@ -12576,11 +12596,12 @@
       "Microsoft.AspNetCore >= 2.0.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.EntityFrameworkCore >= 2.0.0",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "System.Linq.Dynamic >= 1.0.7"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rash2\\.nuget\\packages\\": {},
+    "C:\\Users\\йцуке\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -12589,17 +12610,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\rash2\\Desktop\\Новая папка\\GuestBook\\GuestBook.csproj",
+      "projectUniqueName": "C:\\documents\\guestbook\\Guestbook.WebApi\\GuestBook\\GuestBook.csproj",
       "projectName": "GuestBook",
-      "projectPath": "C:\\Users\\rash2\\Desktop\\Новая папка\\GuestBook\\GuestBook.csproj",
-      "packagesPath": "C:\\Users\\rash2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rash2\\Desktop\\Новая папка\\GuestBook\\obj\\",
+      "projectPath": "C:\\documents\\guestbook\\Guestbook.WebApi\\GuestBook\\GuestBook.csproj",
+      "packagesPath": "C:\\Users\\йцуке\\.nuget\\packages\\",
+      "outputPath": "C:\\documents\\guestbook\\Guestbook.WebApi\\GuestBook\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rash2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\йцуке\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12633,7 +12654,7 @@
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0.0",
+            "version": "2.0",
             "autoReferenced": true
           },
           "AutoMapper": {
@@ -12643,6 +12664,10 @@
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "2.0.0"
+          },
+          "System.Linq.Dynamic": {
+            "target": "Package",
+            "version": "1.0.7"
           }
         },
         "imports": [
@@ -12652,5 +12677,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"System.Linq.Dynamic 1.0.7\" был восстановлен с помощью \".NETFramework,Version=v4.6.1\", а не целевой платформы проекта \".NETCoreApp,Version=v2.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "System.Linq.Dynamic",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }
