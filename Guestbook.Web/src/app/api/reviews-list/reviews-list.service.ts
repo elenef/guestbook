@@ -1,3 +1,4 @@
+import { Review } from './../contracts/review';
 import { ItemList } from './../contracts/item-list';
 import { ApiEndpoints } from './../api-endpoints';
 import { Observable } from 'rxjs';
@@ -13,9 +14,9 @@ export class ReviewsListService {
     private apiService: ApiService
   ) { }
 
-  getReviewsList(): Observable<ItemList<any>> {
+  getReviewsList(): Observable<ItemList<Review>> {
     const url = ApiEndpoints.reviews().listUrl();
-    return this.apiService.get<ItemList<any>>(url);
+    return this.apiService.get<ItemList<Review>>(url);
   }
 
 }
