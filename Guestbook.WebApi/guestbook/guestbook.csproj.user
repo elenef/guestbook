@@ -6,7 +6,4 @@
   <PropertyGroup>
     <ActiveDebugProfile>GuestBook</ActiveDebugProfile>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
-  </PropertyGroup>
 </Project>

@@ -9,18 +9,30 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System.Buffers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
-using System.Buffers;
-using Microsoft.AspNetCore.Http;
 
 namespace GuestBook
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private IHostingEnvironment _environment;
+
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
+            _environment = env;
+
             Configuration = configuration;
+
+            var builder = new ConfigurationBuilder();
+            builder.SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -30,10 +42,9 @@ namespace GuestBook
             var connectionString = Configuration["Data:Database:ConnectionString"];
             services.AddDbContext<DomainContext>(opt => opt.UseSqlServer(connectionString));
 
-            services.AddMvc();
-
-            services.AddCors();
-
+            services.AddMvc()
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization();
             services.Configure<MvcOptions>(opt =>
             {
                 opt.OutputFormatters.RemoveType<JsonOutputFormatter>();
@@ -51,21 +62,24 @@ namespace GuestBook
             AddControllerServices(services);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole();
+            loggerFactory.AddDebug(LogLevel.Debug);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
-
-            
             app.UseCors(builder =>
-               builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader()
-               .AllowCredentials());
+                //builder.WithOrigins(Configuration["Data:AllowOriginFor"])
+                    builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+
+            app.UseMvc();
         }
 
         private void AddRepositores(IServiceCollection services)
@@ -110,8 +124,7 @@ namespace GuestBook
                 opt.GetService<EF7Repository<Restaurant>>(),
                 opt.GetService<IContractMapper>(),
                 opt.GetService<RestaurantEndpointFilter>(),
-                opt.GetService<EF7Repository<Review>>(),
-                opt.GetService<EF7Repository<User>>()));
+                opt.GetService<EF7Repository<Review>>()));
 
             services.AddScoped(opt => new ReviewEndpointService(
                 opt.GetService<EF7Repository<Review>>(),

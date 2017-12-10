@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GuestBook.Controllers
 {
-    [Route("reviews")]
+    [Route("/reviews")]
     public class ReviewController : ApiControllerBase<ReviewContract, EditReviewContract, ReviewFilterContract, Review>
     {
         public ReviewController(IEndpointService<ReviewContract, EditReviewContract, ReviewFilterContract, Review> endpointService) : base(endpointService)

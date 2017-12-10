@@ -9,23 +9,21 @@ namespace GuestBook.Mapper
     {
         public MapperProfile()
         {
-            CreateMap<User, UserContract>()
-                .ReverseMap();
+            CreateMap<EditRestaurantContract, Restaurant>();
 
             CreateMap<Restaurant, RestaurantContract>()
-                .ReverseMap();
+                .ForMember(d => d.ReviewIds, opt => opt.Ignore());
+
+            CreateMap<EditReviewContract, Review>();
 
             CreateMap<Review, ReviewContract>()
                 .ForMember(d => d.Created, opt => opt.MapFrom(r => TimeConverter.ToUnixTime(r.Created)))
-                .ForMember(d => d.UserId, opt => opt.MapFrom(r => r.User.Id))
-                .ForMember(d => d.RestaurantId, opt => opt.MapFrom(r => r.Restaurant.Id))
-                .ReverseMap();
+                .ForMember(d => d.UserName, opt => opt.MapFrom(r => r.User.Name))
+                .ForMember(d => d.RestaurantName, opt => opt.MapFrom(r => r.Restaurant.Name));
+
+            CreateMap<User, UserContract>();
 
             CreateMap<EditUserContract, User>();
-
-            CreateMap<EditRestaurantContract, Restaurant>();
-
-            CreateMap<EditReviewContract, Review>();
         }
     }
 }
