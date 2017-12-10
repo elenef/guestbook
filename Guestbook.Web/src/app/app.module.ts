@@ -19,6 +19,7 @@ import {MdDatepickerModule, MdNativeDateModule } from '@angular/material';
 import { MdSortModule, MdSidenavModule } from '@angular/material';
 import { ApiService } from './api/api.service';
 import { UserModule } from "./users/user-details/user.module";
+import { ReviewsListModule } from "./api/reviews-list/reviews-list.module";
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { UserModule } from "./users/user-details/user.module";
     MdSidenavModule,
     MdDatepickerModule,
     MdNativeDateModule,
-    UserModule
+    UserModule,
+    ReviewsListModule
 
   ],
   providers: [

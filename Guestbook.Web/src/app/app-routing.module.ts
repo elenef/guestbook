@@ -5,12 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard, AdminGuard } from './api/guards/index';
 import { PageDetailsComponent } from "./shared/components/page-details/page-details.component";
 import { UserDetailsComponent } from "./users/user-details/user-details.component";
+import { ReviewsListComponent } from "./api/reviews-list/reviews-list.component";
 // tslint:disable-next-line:max-line-length
 
 const appRoutes: Routes = [
   { path: 'user', component: UserDetailsComponent },
-
   { path: 'user/:id', component: UserDetailsComponent},
+
+  { path: 'reviews', component: ReviewsListComponent },
 
   { path: '**', redirectTo: '' }
 

@@ -2714,34 +2714,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -7564,11 +7544,15 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/10.0.1": {
-      "sha512": "ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
+    "Newtonsoft.Json/10.0.3": {
+      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
       "type": "package",
-      "path": "newtonsoft.json/10.0.1",
+      "path": "newtonsoft.json/10.0.3",
       "files": [
+<<<<<<< HEAD
+=======
+        "LICENSE.md",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -7581,9 +7565,17 @@
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
+<<<<<<< HEAD
         "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.xml",
         "newtonsoft.json.10.0.1.nupkg.sha512",
+=======
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.3.nupkg.sha512",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
       ]
@@ -7706,15 +7698,19 @@
       ]
     },
     "runtime.native.System.Net.Security/4.3.0": {
+<<<<<<< HEAD
       "sha512": "jJy0ri3Qi2JDtSxlnJh9nsJ1OpFv4ZrfPFC0cWsz4WWWl2YmF8aSR2rJhPXmBdw5fHl7gEKHYz1p5/T0KP+Vxw==",
+=======
+      "sha512": "M2nN92ePS8BgQ2oi6Jj3PlTUzadYSIWLdZrHY1n1ZcW9o4wAQQ6W+aQ2lfq1ysZQfVCgDwY58alUdowrzezztg==",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "type": "package",
       "path": "runtime.native.system.net.security/4.3.0",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "runtime.native.system.net.security.4.3.0.nupkg.sha512",
-        "runtime.native.system.net.security.nuspec"
+        "runtime.native.System.Net.Security.4.3.0.nupkg.sha512",
+        "runtime.native.System.Net.Security.nuspec"
       ]
     },
     "runtime.native.System.Security.Cryptography.Apple/4.3.0": {
@@ -8842,7 +8838,11 @@
       ]
     },
     "System.Diagnostics.StackTrace/4.3.0": {
+<<<<<<< HEAD
       "sha512": "2EGm6pyrX+IhrhX1Eh1rYlgqfwD1q2rrMFK5JYakxKKuvPuOTHnAlzNMMfCdXVORijx/nws697gMhb7OXoEVuA==",
+=======
+      "sha512": "BiHg0vgtd35/DM9jvtaC1eKRpWZxr0gcQd643ABG7GnvSlf5pOkY2uyd42mMOJoOmKvnpNj0F4tuoS1pacTwYw==",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "type": "package",
       "path": "system.diagnostics.stacktrace/4.3.0",
       "files": [
@@ -9775,10 +9775,16 @@
       ]
     },
     "System.Net.NameResolution/4.3.0": {
+<<<<<<< HEAD
       "sha512": "bRt/OfcG5WGs0FiLHVWwSEFVnEah5MpANfOyoZUpl4pk93SYIiK5tc+9jzu8RyxIZcpifANbrT1xRpG9wmlcfQ==",
+=======
+      "sha512": "AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "type": "package",
       "path": "system.net.nameresolution/4.3.0",
       "files": [
+        "System.Net.NameResolution.4.3.0.nupkg.sha512",
+        "System.Net.NameResolution.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9809,9 +9815,7 @@
         "runtimes/unix/lib/netstandard1.3/System.Net.NameResolution.dll",
         "runtimes/win/lib/net46/System.Net.NameResolution.dll",
         "runtimes/win/lib/netcore50/System.Net.NameResolution.dll",
-        "runtimes/win/lib/netstandard1.3/System.Net.NameResolution.dll",
-        "system.net.nameresolution.4.3.0.nupkg.sha512",
-        "system.net.nameresolution.nuspec"
+        "runtimes/win/lib/netstandard1.3/System.Net.NameResolution.dll"
       ]
     },
     "System.Net.Primitives/4.3.0": {
@@ -9892,7 +9896,11 @@
       ]
     },
     "System.Net.Security/4.3.0": {
+<<<<<<< HEAD
       "sha512": "j1T0+FF0n9jnrHIGvDY+udz0BLva2zIKuGt0BOwWiR8glvkmFlBlv311gfubM2tL752YXmOe2bt4TO2pou8h4A==",
+=======
+      "sha512": "IgJKNfALqw7JRWp5LMQ5SWHNKvXVz094U6wNE3c1i8bOkMQvgBL+MMQuNt3xl9Qg9iWpj3lFxPZEY6XHmROjMQ==",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "type": "package",
       "path": "system.net.security/4.3.0",
       "files": [
@@ -11017,7 +11025,11 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
+<<<<<<< HEAD
       "sha512": "Uid7Cp7BIwUI06EGlbuGG574yDMj01kuAbVRs+AbZS6lEcGF1T0PMOGHTcfP9PmWMfHyHp6+TfDweRbMQ5h4nA==",
+=======
+      "sha512": "Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
@@ -12003,7 +12015,11 @@
       ]
     },
     "System.Threading.Tasks.Parallel/4.3.0": {
+<<<<<<< HEAD
       "sha512": "kRP49FsDXc2A91xo0Hp+E1bv8i4fXNDZqYwCvHYavpHwx1hhFXchNZlwF1/ROtPBQUOwaCAyJJBHgMb9U7vKcQ==",
+=======
+      "sha512": "cbjBNZHf/vQCfcdhzx7knsiygoCKgxL8mZOeocXZn5gWhCdzHIq6bYNKWX0LAJCWYP7bds4yBK8p06YkP0oa0g==",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "type": "package",
       "path": "system.threading.tasks.parallel/4.3.0",
       "files": [
@@ -12058,10 +12074,16 @@
       ]
     },
     "System.Threading.Thread/4.3.0": {
+<<<<<<< HEAD
       "sha512": "rkS681ukLGCILONSSR1Ur+Phd32F67XnY5JHijxHuy8FXAP1qQbt4cVPLVizlsiKIfRWiaySqsSnZ1cFlGI4EQ==",
+=======
+      "sha512": "OHmbT+Zz065NKII/ZHcH9XO1dEuLGI1L2k7uYss+9C1jLxTC9kTZZuzUOyXHayRk+dft9CiDf3I/QZ0t8JKyBQ==",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "type": "package",
       "path": "system.threading.thread/4.3.0",
       "files": [
+        "System.Threading.Thread.4.3.0.nupkg.sha512",
+        "System.Threading.Thread.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12090,16 +12112,20 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.thread.4.3.0.nupkg.sha512",
-        "system.threading.thread.nuspec"
+        "ref/xamarinwatchos10/_._"
       ]
     },
     "System.Threading.ThreadPool/4.3.0": {
+<<<<<<< HEAD
       "sha512": "DjZ5biqomZQpqa3f+/vBe07NA6GTh2d+LSfLN4iKvKIL8pYMpnSVSfyyITqY7/gh/oi9H1bbqMYiItal5ceXmQ==",
+=======
+      "sha512": "k/+g4b7vjdd4aix83sTgC9VG6oXYKAktSfNIJUNGxPEj7ryEOfzHHhfnmsZvjxawwcD9HyWXKCXmPjX8U4zeSw==",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "type": "package",
       "path": "system.threading.threadpool/4.3.0",
       "files": [
+        "System.Threading.ThreadPool.4.3.0.nupkg.sha512",
+        "System.Threading.ThreadPool.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12128,9 +12154,7 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.threadpool.4.3.0.nupkg.sha512",
-        "system.threading.threadpool.nuspec"
+        "ref/xamarinwatchos10/_._"
       ]
     },
     "System.Threading.Timer/4.3.0": {
@@ -12576,12 +12600,17 @@
       "Microsoft.AspNetCore >= 2.0.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.EntityFrameworkCore >= 2.0.0",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "Newtonsoft.Json >= 10.0.3"
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Katherine\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+=======
+    "C:\\Users\\йцуке\\.nuget\\packages\\": {},
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -12590,20 +12619,33 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\angullar2\\guestbook\\Guestbook.WebApi\\GuestBook\\GuestBook.csproj",
       "projectName": "GuestBook",
       "projectPath": "D:\\angullar2\\guestbook\\Guestbook.WebApi\\GuestBook\\GuestBook.csproj",
       "packagesPath": "C:\\Users\\Katherine\\.nuget\\packages\\",
       "outputPath": "D:\\angullar2\\guestbook\\Guestbook.WebApi\\GuestBook\\obj\\",
+=======
+      "projectUniqueName": "C:\\documents\\guestbook\\Guestbook.WebApi\\GuestBook\\GuestBook.csproj",
+      "projectName": "GuestBook",
+      "projectPath": "C:\\documents\\guestbook\\Guestbook.WebApi\\GuestBook\\GuestBook.csproj",
+      "packagesPath": "C:\\Users\\йцуке\\.nuget\\packages\\",
+      "outputPath": "C:\\documents\\guestbook\\Guestbook.WebApi\\GuestBook\\obj\\",
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Katherine\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+=======
+        "C:\\Users\\йцуке\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -12636,7 +12678,12 @@
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[2.0.0, )"
+=======
+            "version": "2.0",
+            "autoReferenced": true
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -12644,8 +12691,16 @@
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[2.0.0, )",
             "autoReferenced": true
+=======
+            "version": "2.0.0"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "10.0.3"
+>>>>>>> 246e4f5e3464922e9d3dd7ab2a57e35e83263fa2
           }
         },
         "imports": [

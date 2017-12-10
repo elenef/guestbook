@@ -11,4 +11,8 @@ export class ApiEndpoints {
         return new ApiEndpointBase(ApiEndpoints.BaseApiUrl + '/users');
     }
 
+    static reviews(): ApiEndpoint {
+        return new ApiEndpointBase(ApiEndpoints.BaseApiUrl + '/reviews');
+    }
+
 }
