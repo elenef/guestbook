@@ -1,37 +1,34 @@
-﻿using GuestBook.Mapper;
-using GuestBook.Models;
-using GuestBook.Models.Contracts;
-using GuestBook.Repositories;
-using GuestBook.Services.Filters;
+﻿using System;
+using GuestBook.Data;
+using GuestBook.Domain;
+using GuestBook.WebApi.Contracts;
+using GuestBook.WebApi.Mapper;
+using GuestBook.WebApi.Services.Filters;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GuestBook.Services
+namespace GuestBook.WebApi.Services
 {
     public class ReviewEndpointService : EndpointService<ReviewContract, EditReviewContract, ReviewFilterContract, Review, ReviewEndpointFilter>
     {
-        private IRepository<User> _repositoryUsers;
         private IRepository<Restaurant> _repositoryRestaurants;
 
         public ReviewEndpointService(
             IRepository<Review> repository,
             IContractMapper mapper,
             ReviewEndpointFilter filter,
-            IRepository<User> repositoryUsers,
             IRepository<Restaurant> repositoryRestaurants)
             : base(repository, mapper, filter)
         {
             _repositoryRestaurants = repositoryRestaurants;
-            _repositoryUsers = repositoryUsers;
         }
 
         protected override IQueryable<Review> GetListQuery()
         {
             return _repository.Items
-                .Include(i => i.Restaurant)
-                .Include(i => i.User);
+                .Include(i => i.Restaurant);
         }
 
         public override async Task<ItemList<ReviewContract>> ListAsync(ReviewFilterContract filterModel)
@@ -50,6 +47,7 @@ namespace GuestBook.Services
                 Data = models,
                 Total = total
             };
+
             return result;
         }
 
@@ -58,10 +56,34 @@ namespace GuestBook.Services
             item.Restaurant = await _repositoryRestaurants.Items.Where(r => r.Id.Equals(model.RestaurantId))
                 .FirstOrDefaultAsync();
 
-            item.User = await _repositoryUsers.Items.Where(r => r.Id.Equals(model.UserId))
+            var restaurant = await _repositoryRestaurants.Items.Where(l => l.Id.Equals(model.RestaurantId))
                 .FirstOrDefaultAsync();
 
+            restaurant.Rating = (restaurant.Rating + model.RatingRestaurant) / 2;
+
+            await _repositoryRestaurants.UpdateAsync(restaurant);
+
             await base.BeforeUpdate(model, item);
+        }
+
+        public override async Task<ReviewContract> UpdateAsync(string id, EditReviewContract model)
+        {
+            await ValidateModel(model);
+            var item = await GetListQuery()
+                .FirstOrDefaultAsync(i => i.Id == id);
+
+            if (item == null)
+            {
+                throw new Exception(typeof(Review) + id);
+            }
+
+            _mapper.Map(model, item);
+
+            await _repository.UpdateAsync(item);
+
+            var result = _mapper.Map<Review, ReviewContract>(item);
+            await AfterMapAsync(item, result);
+            return result;
         }
     }
 }

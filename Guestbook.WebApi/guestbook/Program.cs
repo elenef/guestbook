@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace GuestBook
+namespace GuestBook.WebApi
 {
     public class Program
     {

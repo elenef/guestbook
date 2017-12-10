@@ -1,4 +1,4 @@
-﻿namespace GuestBook.Services.Filters
+﻿namespace GuestBook.WebApi.Services.Filters
 {
     public class RestaurantFilterContract : BaseFilterContract
     {

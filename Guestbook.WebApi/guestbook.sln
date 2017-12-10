@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestBook", "GuestBook\GuestBook.csproj", "{7D3CDDA9-FDCC-46F3-B5C4-330AA90297A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuestBook.WebApi", "GuestBook\GuestBook.WebApi.csproj", "{7D3CDDA9-FDCC-46F3-B5C4-330AA90297A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestBook.Data", "GuestBook.Data\GuestBook.Data.csproj", "{DA12EDCB-D0B8-41D0-AB76-ABCEE81ADAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestBook.Domain", "GuestBook.Domain\GuestBook.Domain.csproj", "{AD18A18B-E236-4502-9728-476C8ABA3114}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7D3CDDA9-FDCC-46F3-B5C4-330AA90297A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D3CDDA9-FDCC-46F3-B5C4-330AA90297A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D3CDDA9-FDCC-46F3-B5C4-330AA90297A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA12EDCB-D0B8-41D0-AB76-ABCEE81ADAE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA12EDCB-D0B8-41D0-AB76-ABCEE81ADAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA12EDCB-D0B8-41D0-AB76-ABCEE81ADAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA12EDCB-D0B8-41D0-AB76-ABCEE81ADAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD18A18B-E236-4502-9728-476C8ABA3114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD18A18B-E236-4502-9728-476C8ABA3114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD18A18B-E236-4502-9728-476C8ABA3114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD18A18B-E236-4502-9728-476C8ABA3114}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

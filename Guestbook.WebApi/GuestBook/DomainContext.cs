@@ -1,7 +1,7 @@
-﻿using GuestBook.Models;
+﻿using GuestBook.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace GuestBook
+namespace GuestBook.WebApi
 {
     public class DomainContext : DbContext
     {
@@ -22,7 +22,7 @@ namespace GuestBook
                 .HasMany(l => l.Reviews);
 
             mb.Entity<User>()
-                .HasMany(l => l.Reviews);
+                .HasMany(l => l.Restaurants);
         }
     }
 }

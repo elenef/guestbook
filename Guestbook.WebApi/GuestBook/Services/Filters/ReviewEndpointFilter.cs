@@ -1,8 +1,8 @@
-﻿using GuestBook.Models;
+﻿using GuestBook.Domain;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GuestBook.Services.Filters
+namespace GuestBook.WebApi.Services.Filters
 {
     public class ReviewEndpointFilter : BaseEndpoinFilter<ReviewFilterContract, Review>
     {
@@ -16,9 +16,9 @@ namespace GuestBook.Services.Filters
                 query = query.Where(p => p.Restaurant.Name.Contains(filter.Search));
             }
 
-            if (!string.IsNullOrWhiteSpace(filter.RestaurantIds))
+            if (!string.IsNullOrWhiteSpace(filter.restaurantName))
             {
-                query = query.Where(q => filter.RestaurantIds.DeserializeToList().Contains(q.Restaurant.Id));
+                query = query.Where(q => filter.restaurantName.Equals(q.Restaurant.Name));
             }
 
             return Task.FromResult(query);

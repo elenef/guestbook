@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace GuestBook
+namespace GuestBook.WebApi
 {
     public static class Config
     {
