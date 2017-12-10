@@ -10,7 +10,8 @@ import { UserDetailsComponent } from "./users/user-details/user-details.componen
 const appRoutes: Routes = [
   { path: 'user', component: UserDetailsComponent },
 
-  { path: '/'},
+  { path: 'user/:id', component: UserDetailsComponent},
+
   { path: '**', redirectTo: '' }
 
 ];
