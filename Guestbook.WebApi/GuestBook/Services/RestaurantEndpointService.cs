@@ -1,12 +1,12 @@
-﻿using GuestBook.Data;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using GuestBook.Data;
 using GuestBook.Domain;
 using GuestBook.WebApi.Contracts;
 using GuestBook.WebApi.Mapper;
 using GuestBook.WebApi.Services.Filters;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GuestBook.WebApi.Services
 {
@@ -28,7 +28,7 @@ namespace GuestBook.WebApi.Services
         {
             foreach (var c in contract)
             {
-                var review = _repositoryReview.Items.Include(r => r.User).Where(r => r.Restaurant.Id.Equals(c.Id)).ToList();
+                var review = _repositoryReview.Items.Where(r => r.Restaurant.Id.Equals(c.Id)).ToList();
 
                 var listReview = _mapper.Map<List<Review>, List<ReviewContract>>(review);
 
