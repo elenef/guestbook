@@ -57,7 +57,7 @@ package-lock.json
 **/*/bin/*
 *.user
 *.lock.json
-*/.vs/*
+!*/.vs/*
 packages/*
 */packages/*
 */node_modules/*
