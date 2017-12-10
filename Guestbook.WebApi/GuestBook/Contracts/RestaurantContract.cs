@@ -7,5 +7,7 @@ namespace GuestBook.WebApi.Contracts
         public string Id { get; set; }
 
         public List<string> ReviewIds { get; set; }
+
+        public float Rating { get; set; }
     }
 }

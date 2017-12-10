@@ -1,7 +1,7 @@
 ﻿namespace GuestBook.WebApi.Contracts
 {
     public class EditUserContract
-    { 
+    {
         public string Name { get; set; }
 
         public string Login { get; set; }
