@@ -5,7 +5,7 @@ export class Review {
     restaurantId: string;
     userId: string;
 
-    constructor(data: any) {
+    constructor(data?: any) {
         if (data) {
             for (var i in data) {
                 this[i] = data[i];

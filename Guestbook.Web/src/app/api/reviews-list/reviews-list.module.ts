@@ -9,13 +9,15 @@ import { ReviewsListComponent } from './reviews-list.component';
 import { ReviewsListService } from './reviews-list.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReviewDetailsDialogComponent } from "./review-details-dialog/review-details-dialog.component";
 
 @NgModule({
   imports: [
     FlexLayoutModule, MaterialModule, SharedModule, CommonModule,
     FormsModule, ApiModule,  RouterModule, MdTableModule, CdkTableModule, ReactiveFormsModule
   ],
-  declarations: [ReviewsListComponent],
+  declarations: [ReviewsListComponent, ReviewDetailsDialogComponent],
   providers: [ReviewsListService],
+  entryComponents: [ReviewDetailsDialogComponent]
 })
 export class ReviewsListModule { }
