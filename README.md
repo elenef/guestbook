@@ -1,2 +1,1 @@
-# guestbook-
- guestbook about restaurants
+# guestbook - guestbook about restaurants
