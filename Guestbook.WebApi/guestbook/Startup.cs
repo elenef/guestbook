@@ -130,7 +130,6 @@ namespace GuestBook.WebApi
                 opt.GetService<EF7Repository<Review>>(),
                 opt.GetService<IContractMapper>(),
                 opt.GetService<ReviewEndpointFilter>(),
-                opt.GetService<EF7Repository<User>>(),
                 opt.GetService<EF7Repository<Restaurant>>()));
         }
 
