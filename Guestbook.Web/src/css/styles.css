@@ -665,7 +665,6 @@ md-header-cell{
 
  app-review-details-dialog .text-area .mat-input-flex{
       height: 100px!important;
-      border: 0px!important;
  }
 
   app-review-details-dialog .text-area .mat-input-container{

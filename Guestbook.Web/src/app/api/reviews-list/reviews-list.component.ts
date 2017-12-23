@@ -25,7 +25,7 @@ export class ReviewsListComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
- /* ngOnInit() {
+ /*ngOnInit() {
     this.reviews = [
       new Review({ userName: 'Tommy', restaurantName: 'KFC', 
       comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
