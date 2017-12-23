@@ -1,20 +1,20 @@
-﻿using GuestBook.Mapper;
-using GuestBook.Models;
-using GuestBook.Models.Contracts;
-using GuestBook.Repositories;
-using GuestBook.Services;
-using GuestBook.Services.Filters;
+﻿using GuestBook.Data;
+using GuestBook.Domain;
+using GuestBook.WebApi.Contracts;
+using GuestBook.WebApi.Mapper;
+using GuestBook.WebApi.Services;
+using GuestBook.WebApi.Services.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Buffers;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 
-namespace GuestBook
+namespace GuestBook.WebApi
 {
     public class Startup
     {
@@ -130,7 +130,6 @@ namespace GuestBook
                 opt.GetService<EF7Repository<Review>>(),
                 opt.GetService<IContractMapper>(),
                 opt.GetService<ReviewEndpointFilter>(),
-                opt.GetService<EF7Repository<User>>(),
                 opt.GetService<EF7Repository<Restaurant>>()));
         }
 

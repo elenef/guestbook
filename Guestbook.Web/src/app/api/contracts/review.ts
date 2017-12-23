@@ -3,16 +3,26 @@ export class Review {
     created: number;
     comment: string;
     restaurantId: string;
-    userId: string;
-    restaurantName: string;
     userName: string;
-    like: number;
+    email: string;
+    ratingRestaurant: number;
 
-    constructor(data: any) {
+
+    constructor(data?: any) {
         if (data) {
             for (var i in data) {
                 this[i] = data[i];
             }
+        }
+    }
+
+    serialize() {
+        return {
+            restaurantId: this.restaurantId,
+            comment: this.comment,
+            email: this.email,
+            userName: this.userName,
+            ratingRestaurant: this.ratingRestaurant,
         }
     }
 }

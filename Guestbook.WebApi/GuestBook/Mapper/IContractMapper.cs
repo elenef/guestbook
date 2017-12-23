@@ -1,4 +1,4 @@
-﻿namespace GuestBook.Mapper
+﻿namespace GuestBook.WebApi.Mapper
 {
     public interface IContractMapper
     {

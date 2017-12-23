@@ -1,4 +1,4 @@
-import { ReviewsListModule } from './reviews-list/reviews-list.module';
+
 import { CdkTableModule } from '@angular/cdk';
 import { PageDetailsComponent } from './shared/components/page-details/page-details.component';
 import { SharedModule } from './shared/shared.module';
@@ -19,11 +19,13 @@ import { ApiModule } from './api/api.module';
 import {MdDatepickerModule, MdNativeDateModule } from '@angular/material';
 import { MdSortModule, MdSidenavModule } from '@angular/material';
 import { ApiService } from './api/api.service';
+import { UserModule } from "./users/user-details/user.module";
+import { ReviewsListModule } from "./api/reviews-list/reviews-list.module";
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,9 @@ import { ApiService } from './api/api.service';
     MdSidenavModule,
     MdDatepickerModule,
     MdNativeDateModule,
-    ReviewsListModule,
+    UserModule,
+    ReviewsListModule
+
   ],
   providers: [
     MessageService, ConfirmationService, FilterService,

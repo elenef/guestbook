@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GuestBook.Services.Filters
+namespace GuestBook.WebApi.Services.Filters
 {
     /// <summary>
     /// Фильтр для ресурса апи.

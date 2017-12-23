@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { ApiService } from './api.service';
 import { BaseApiService } from './base-api.service';
-import { ReviewsListComponent } from '../reviews-list/reviews-list.component';
 
 
 

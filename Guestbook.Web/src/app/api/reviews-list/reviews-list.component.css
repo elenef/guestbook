@@ -23,27 +23,68 @@ body {
 }
 
 .mat-list-card{
-  border: 1px solid #FFFFFF;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
 
+}
+
+.mat-card-content-img{
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 
 .mat-list-card-background:hover{
   transform: scale();
   -webkit-transform: scale(1.002);
   transition: 0.1s linear;
-  background: rgba(0, 0, 0, 0.02);
+  opacity: 0.9;
   cursor: pointer;
 }
 
 .mat-card-content-text{
-  font-size: 18px;
+  font-size: 16px;
+  color: #FFFFFF;
 }
 
-.mat-sidebar-item:hover {
+.mat-card-content-sub-title{
+  font-size: 18px;
+  color: #FFFFFF;
+}
+
+
+.mat-sidebar-item:not(.active):hover {
   background: rgba(0, 0, 0, 0.09);
   color: #FFFFFF;
   transition: 1s;
+}
+
+.mat-card-content-icon-favorite:hover{
+  transform: scale();
+  -webkit-transform: scale(1.6);
+  transition: 0.1s linear;
+  color: #FA0606;
+  cursor: pointer;
+}
+
+
+.mat-sidebar a.active {
+  background: rgba(0, 0, 0, 0.15);
+  color: #FFFFFF;
+}
+
+
+.mat-header-content-title{
+  color: #068F81;
+  font: 400 32px 'Roboto','Helvetica Neue','sans-serif';
+  cursor: default;
+}
+
+.mat-card-content-icon{
+  color: #FFFFFF;
+}
+
+.mat-card-content-title{
+  color: #DBFDFA;
+  font-size: 18px;
 }
 
 .mat-sidebar-item {
@@ -57,7 +98,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
   line-height: 10px;
-  
+}
+
+/deep/ .mat-list-item-content{
+  padding: 0 !important;
+}
+
+.mat-font-family{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .mat-sidebar-subheader {
@@ -65,6 +113,8 @@ body {
   background: rgba(0, 0, 0, 0.02);
   font-size: 16px;
 }
+
+
 
 a {
   text-decoration: none;
@@ -84,17 +134,11 @@ a {
   padding-top: 0;
 }
 
-/*
-.mat-list-header-image {
-  background-image: url("../../../assets/example.jpg");
-  background-size: cover;
-}*/
-
 
 
 .header{
   width: 100%;
-  min-height: 150px;
+  min-height: 180px;
   height: 30%;
 
 }
@@ -108,3 +152,49 @@ a {
   width: 80%;
   height: 100%;
 }
+
+.logo{
+  width: 20%;
+  height: 100%;
+}
+
+.logo-img{
+  width: 100%;
+  background: url("../../../assets/logo.png") no-repeat; 
+  background-size: contain;
+  background-position: center center;
+}
+
+.mat-card-content-img-text{
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.header-content{
+  width: 80%;
+  height: 100%;
+}
+
+.mat-header-content-exit-text{
+ color: #065854;
+ font-size: 18px;
+}
+.mat-header-content-exit-decoration{
+  text-decoration: underline;
+}
+
+.mat-header-content-exit-icon{
+  font-size: 24px;
+  color: #065854;
+}
+
+.mat-header-content-exit-icon-position{
+  position: relative;
+  top: 3px;
+}
+
+.mat-header-content-exit{
+  padding-right: 16px;
+} 

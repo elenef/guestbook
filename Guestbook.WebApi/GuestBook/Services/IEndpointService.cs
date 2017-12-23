@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using GuestBook.Models.Contracts;
-using GuestBook.Services.Filters;
+﻿using GuestBook.WebApi.Contracts;
+using GuestBook.WebApi.Services.Filters;
+using System.Threading.Tasks;
 
-namespace GuestBook.Services
+namespace GuestBook.WebApi.Services
 {
     /// <summary>
     /// Интерфейс сервиса типового ресурса

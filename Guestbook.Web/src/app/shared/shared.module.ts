@@ -15,6 +15,7 @@ import { CdkTableModule } from '@angular/cdk';
 import { PageDetailsComponent } from './components/page-details/page-details.component';
 import {MdSidenavModule} from '@angular/material';
 import { AppRoutingModule } from '../app-routing.module';
+import { PhoneNumberComponent} from "./components/index";
 
 
 @NgModule({
@@ -28,10 +29,12 @@ import { AppRoutingModule } from '../app-routing.module';
     AppRoutingModule
     ],
   declarations: [
-    UnixDatePipe,
+    PhoneNumberComponent,
+     UnixDatePipe,
     PageSearchComponent
     ],
   exports: [
+    PhoneNumberComponent,
     UnixDatePipe,
     PageSearchComponent
     ],

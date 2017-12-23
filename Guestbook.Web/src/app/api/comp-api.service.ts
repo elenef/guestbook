@@ -1,6 +1,4 @@
-﻿import { MessageService } from './../shared/services/message.service';
-
-import { Observable, Subscriber } from 'rxjs/Rx';
+﻿import { Observable, Subscriber } from 'rxjs/Rx';
 import { AuthorizationService } from './authorization.service';
 import { Http, Response, RequestOptionsArgs } from "@angular/http";
 import { Injectable, Optional } from "@angular/core";
@@ -8,6 +6,7 @@ import { Headers, RequestOptions } from '@angular/http';
 import { ErrorResponse } from './contracts'
 import { ApiService } from './api.service'
 import { BaseApiService } from './base-api.service'
+import { MessageService } from "../shared/services/message.service";
 
 @Injectable()
 /**
@@ -25,12 +24,12 @@ export class CompApiService implements ApiService {
 
     constructor(
         private apiService: BaseApiService,
-        private messageService:  MessageService
+        private messageService: MessageService
     ) { }
 
     public get<TContract>(url: string): Observable<TContract> {
         this.requestsInProgress++;
- 
+
         let ctx = this;
         return new Observable<TContract>((obs: Subscriber<TContract>) => {
             ctx.apiService.get<TContract>(url)
@@ -120,7 +119,7 @@ export class CompApiService implements ApiService {
     private showErrorMessage(response: Response) {
         let error = null;
         if (response != null) {
-            if(response.json) {
+            if (response.json) {
                 error = <ErrorResponse>response.json();
             } else {
                 error = new ErrorResponse();

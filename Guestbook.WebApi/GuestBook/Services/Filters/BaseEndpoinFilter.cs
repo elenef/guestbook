@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Dynamic;
 using System.Threading.Tasks;
 
-namespace GuestBook.Services.Filters
+namespace GuestBook.WebApi.Services.Filters
 {
     public class BaseEndpoinFilter<TFilterContract, TDataModel>
         : IEndpointFilter<TFilterContract, TDataModel>
