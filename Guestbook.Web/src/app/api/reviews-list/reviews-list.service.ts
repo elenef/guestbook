@@ -15,10 +15,12 @@ export class ReviewsListService {
     private apiService: ApiService
   ) { }
 
-    getReviewsList(restaurantName?: string, search?: string): Observable<ItemList<Review>> {
+    getReviewsList(restaurantName?: string, search?: string, startTime?: number, endTime?: number): Observable<ItemList<Review>> {
     const parameters = {
       'restaurantName': restaurantName,
       'search': search,
+      'dateFrom': startTime,
+      'dateTo': endTime,
     };
     const url = ApiEndpoints.reviews().listUrl(parameters);
     return this.apiService.get<ItemList<Review>>(url);

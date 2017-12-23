@@ -6,6 +6,7 @@ import { ReviewDetailsDialogComponent } from "./review-details-dialog/review-det
 import { ReviewInformationDialogComponent } from "./review-informations/review-information.component";
 import { Restaurant } from "../contracts/restaurant";
 import { Router, ActivatedRoute } from '@angular/router';
+import { DateTime } from "../../shared/utils/date-time";
 
 @Component({
   selector: 'app-reviews-list',
@@ -18,6 +19,12 @@ export class ReviewsListComponent implements OnInit {
   restaurants: Restaurant[];
   restaurantName: string;
   search: string = '';
+
+  dateFrom: string = '';
+  dateTo: string = '';
+  startTimeStamp: number = 0;
+  endTimeStamp: number = 0;
+  unixDay: number = 86399;
   constructor(
     private reviewsListService: ReviewsListService,
     protected dialog: MdDialog,
@@ -25,23 +32,12 @@ export class ReviewsListComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
- /*ngOnInit() {
-    this.reviews = [
-      new Review({ userName: 'Tommy', restaurantName: 'KFC', 
-      comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
-      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
-      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
-      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
-      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
-      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
-    ];
-    /*this.reviewsListService.getReviewsList().subscribe((res) => {
-      this.reviews = res.data;
-    });*/
-//}
 
   onCreateReview() {
     const dialogRef = this.dialog.open(ReviewDetailsDialogComponent);
+    dialogRef.afterClosed().subscribe(() => {
+      this.getReviewsList();
+    });
   }
 
   onShowReview() {
@@ -50,7 +46,7 @@ export class ReviewsListComponent implements OnInit {
   }
 
 
-  
+
   ngOnInit() {
     this.route.queryParams
       .subscribe((queryParams: any) => {
@@ -61,6 +57,16 @@ export class ReviewsListComponent implements OnInit {
         let search = queryParams['search'];
         if (search) {
           this.search = search;
+        }
+        let dateFrom = queryParams['dateFrom'];
+        if (dateFrom) {
+          this.startTimeStamp = dateFrom;
+          this.dateFrom = new DateTime(this.startTimeStamp).formatLocal('DD-MM-YYYY');
+        }
+        let dateTo = queryParams['dateTo'];
+        if (dateTo) {
+          this.endTimeStamp = dateTo;
+          this.dateTo = new DateTime(this.endTimeStamp).formatLocal('DD-MM-YYYY');
         }
         this.getReviewsList();
         this.reviewsListService.getRestaurantsList().subscribe((res) => {
@@ -73,6 +79,8 @@ export class ReviewsListComponent implements OnInit {
     let parameters = {
       'search': this.search,
       'restaurantName': this.restaurantName,
+      'dateFrom': this.startTimeStamp,
+      'dateTo': this.endTimeStamp,
     };
 
     for (let parameter in parameters) {
@@ -86,14 +94,15 @@ export class ReviewsListComponent implements OnInit {
 
 
   getReviewsList() {
-    this.reviewsListService.getReviewsList(this.restaurantName, this.search).subscribe((res) => {
-      this.reviews = res.data;
+    this.reviewsListService.getReviewsList(this.restaurantName, this.search, 
+                this.startTimeStamp, this.endTimeStamp).subscribe((res) => {
+    this.reviews = res.data;
     });
   }
 
   updateReview(review: Review) {
     this.reviewsListService.updateReview(review).subscribe(() => {
-        this.getReviewsList();
+      this.getReviewsList();
     });
   }
 
@@ -112,6 +121,24 @@ export class ReviewsListComponent implements OnInit {
     */
     //review.like = review.like ? review.like++ : 1;
     this.updateReview(review);
+  }
+
+  onStartDateChange() {
+    if (this.dateFrom !== null) {
+      this.startTimeStamp = new Date(this.dateFrom).getTime() / 1000;
+    } else {
+      this.startTimeStamp = 0;
+    }
+    this.onFiltrationReviews();
+  }
+
+  onEndDateChange() {
+    if (this.dateTo !== null) {
+      this.endTimeStamp = new Date(this.dateTo).getTime() / 1000 + this.unixDay;
+    } else {
+      this.endTimeStamp = 0;
+    }
+    this.onFiltrationReviews();
   }
 
 }

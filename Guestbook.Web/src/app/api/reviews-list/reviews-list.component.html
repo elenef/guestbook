@@ -19,7 +19,22 @@
         <page-search class="page-header-search" [search]="search" (searchChange)="onSearch($event)" placeholder="Введите для поиска..."></page-search>
       </div>
       <div fxFlex="30%">
-        Здесь будет компонент с фильтром по дате
+        <div fxLayoutGap="20px" fxLayout="row" fxLayout.xs="column">
+          <div fxLayoutAlign="start center" fxLayoutGap="0.5em">
+            <span class="span_filter">Период:</span>
+            <md-input-container floatPlaceholder="never">
+              <input mdInput [mdDatepicker]="picker" [(ngModel)]="dateFrom" (ngModelChange)="onStartDateChange()" placeholder="начало периода">
+              <button mdSuffix [mdDatepickerToggle]="picker"></button>
+            </md-input-container>
+            <md-datepicker #picker></md-datepicker>
+
+            <md-input-container floatPlaceholder="never">
+              <input mdInput [mdDatepicker]="pickerOne" [(ngModel)]="dateTo" (ngModelChange)="onEndDateChange()" placeholder="окончание периода">
+              <button mdSuffix [mdDatepickerToggle]="pickerOne"></button>
+            </md-input-container>
+            <md-datepicker #pickerOne></md-datepicker>
+          </div>
+        </div>
       </div>
     </div>
   </div>

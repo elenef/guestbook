@@ -35,19 +35,8 @@ namespace GuestBook.WebApi.Services.Filters
 
         private IQueryable<Review> FilterByReviewCreationDate(IQueryable<Review> query, long filterDateTo, long filterDateFrom)
         {
-            var dateFrom = TimeConverter.FromUnixTime(filterDateFrom);
-
-            if (filterDateTo <= 0)
-            {
-                filterDateTo = (long)TimeConverter.ToUnixTime(DateTime.UtcNow);
-            }
-
             var dateTo = TimeConverter.FromUnixTime(filterDateTo);
-
-            if (dateFrom > dateTo)
-            {
-                throw new Exception("Вверхняя граница фильтра больше чем нижняя граница.");
-            }
+            var dateFrom = TimeConverter.FromUnixTime(filterDateFrom);
 
             if (filterDateFrom != 0)
             {

@@ -6,6 +6,7 @@ export class Review {
     userName: string;
     email: string;
     ratingRestaurant: number;
+    like: number;
 
 
     constructor(data?: any) {
@@ -23,6 +24,7 @@ export class Review {
             email: this.email,
             userName: this.userName,
             ratingRestaurant: this.ratingRestaurant,
+            like: this.like,
         }
     }
 }
