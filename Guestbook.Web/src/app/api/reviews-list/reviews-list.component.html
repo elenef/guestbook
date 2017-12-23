@@ -52,15 +52,16 @@
         </md-list-item>
       </md-list>
     </div>
-    <div class="content">
-      <div fxFill class="mat-list" fxLayout="row" fxLayoutWrap fxLayoutGap="10px">
-        <md-card fxLayout="column" fxLayoutAlign="space-between none" *ngFor="let review of reviews" (click)="onShowReview()" class="mat-list-card mat-list-card-background">
+    <div class="content" *ngIf="reviews">
+      <div *ngIf="!reviews.length">По вашему запросу ничего не найдено</div>
+      <div *ngIf="reviews.length" fxFill class="mat-list" fxLayout="row" fxLayoutWrap fxLayoutGap="10px">
+        <md-card fxLayout="column" fxLayoutAlign="space-between none" *ngFor="let review of reviews" class="mat-list-card mat-list-card-background">
           <md-card-header>
             <div md-card-avatar class="mat-card-content-img" [style.background]="colors[getRandomInt(0,colors.length)]" fxLayout="row"
               fxLayoutAlign="center center" class="mat-card-content-img-text mat-font-family">
               <div>{{review.userName[0]}}</div>
             </div>
-            <md-card-title class="mat-card-content-title mat-font-family">{{review.restaurantName}}</md-card-title>
+            <md-card-title class="mat-card-content-title mat-font-family">{{review.restaurantName}} ({{review.ratingRestaurant}} <md-icon class="mat-card-content-icon-star">star</md-icon>)</md-card-title>
             <md-card-subtitle class="mat-card-content-sub-title mat-font-family">{{review.userName}}</md-card-subtitle>
           </md-card-header>
           <md-card-content class="mat-card-content-comment">
@@ -74,7 +75,8 @@
               <div class="mat-card-content-text mat-font-family">{{review.created | unixdate}}</div>
             </div>
             <div md-card-actions>
-              <button md-icon-button color="warn" (click)="onLikeReview(review)">
+              <span class="mat-card-content-text mat-font-family">{{review.like}}</span>
+              <button md-icon-button color="warn" class="mat-card-content-button-favorite" (click)="onLikeReview(review)">
                   <md-icon class="md-24 mat-card-content-icon-favorite" aria-label="icon-button with a heart icon">favorite</md-icon>
               </button>
             </div>

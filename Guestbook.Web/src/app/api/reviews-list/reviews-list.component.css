@@ -11,7 +11,12 @@ body {
   min-width: 200px;
 }
 
-
+.mat-card-content-icon-star {
+  font-size: 14px;
+  color: #F7F761 !important;
+  width: 14px;
+  height: 14px;
+}
 
 
 
@@ -46,7 +51,7 @@ body {
 }
 
 .mat-card-content-sub-title{
-  font-size: 18px;
+  font-size: 14px;
   color: #FFFFFF;
 }
 
@@ -59,7 +64,7 @@ body {
 
 .mat-card-content-icon-favorite:hover{
   transform: scale();
-  -webkit-transform: scale(1.6);
+  -webkit-transform: scale(1.2);
   transition: 0.1s linear;
   color: #FA0606;
   cursor: pointer;
@@ -203,4 +208,9 @@ a {
   bottom: 50px;
   right: 50px;
   position: fixed;
+}
+
+.mat-card-content-button-favorite{
+  width: 24px;
+  height: 24px;
 }

@@ -1,11 +1,11 @@
+import { Restaurant } from './../contracts/restaurant';
 import { Review } from './../contracts/review';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ReviewsListService } from './reviews-list.service';
 import { Component, OnInit } from '@angular/core';
 import { MdDialog } from '@angular/material';
 import { ReviewDetailsDialogComponent } from "./review-details-dialog/review-details-dialog.component";
 import { ReviewInformationDialogComponent } from "./review-informations/review-information.component";
-import { Restaurant } from "../contracts/restaurant";
-import { Router, ActivatedRoute } from '@angular/router';
 import { DateTime } from "../../shared/utils/date-time";
 
 @Component({
@@ -75,6 +75,8 @@ export class ReviewsListComponent implements OnInit {
       });
   }
 
+
+
   onFiltrationReviews() {
     let parameters = {
       'search': this.search,
@@ -116,10 +118,7 @@ export class ReviewsListComponent implements OnInit {
   }
 
   onLikeReview(review: Review) {
-    /*
-     * while backend not update
-    */
-    //review.like = review.like ? review.like++ : 1;
+    review.like = review.like ? ++review.like : 1;
     this.updateReview(review);
   }
 

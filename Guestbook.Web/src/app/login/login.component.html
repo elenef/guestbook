@@ -1,0 +1,21 @@
+<form class="main" fxFlexFill fxLayoutAlign="center" (submit)="login(loginform)" #loginform="ngForm">
+  <div class="container" fxLayout="column" fxLayoutAlign="space-between" fxFlex="20" fxFlex.lt-sm="92" fxFlex.lt-md="60" fxFlex.lt-lg="40">
+    <div class="authorization-text" fxLayoutAlign="center">
+      <span>Авторизация</span>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <md-input-container floatPlaceholder="never">
+        <input mdInput placeholder="Логин" name="login" [(ngModel)]="username" required>
+      </md-input-container>
+      <md-input-container floatPlaceholder="never">
+        <input mdInput placeholder="Пароль" type="password" name="password" [(ngModel)]="password" required>
+      </md-input-container>
+    </div>
+    <div fxLayoutAlign="center end">
+      <button class="mdl-button" md-raised-button color="primary" type="submit">Войти</button>
+    </div>
+  </div>
+</form>
+<div class="registration-btn-container" fxLayout="column">
+  <button class="mdl-button" md-raised-button color="primary">Регистрация</button>
+</div>

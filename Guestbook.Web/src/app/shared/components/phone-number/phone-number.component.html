@@ -3,9 +3,6 @@
         <span style="color:black" mdPrefix>+7</span>
         <input mdInput type="tel" [disabled]="disabled" #phone="ngModel" [placeholder]="placeholder" minlength="10" maxlength="10"
             [name]="phoneName" pattern="^([\d]{10})$" [ngModel]="phoneField" (ngModelChange)="onPhoneChange($event)" required>
-        <md-hint align="start">
-            Номер телефона без тире и пробелов
-        </md-hint>
         <md-error [hidden]="phone.valid || phone.hasError('pattern')">
             Не указан телефон
         </md-error>

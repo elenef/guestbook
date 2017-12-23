@@ -35,7 +35,7 @@
   width: 100% !important;
   height: 25px !important;
 }
-
+ 
 .page-search {
   padding-left: 1px !important;
   padding-right: 16px !important;
@@ -118,11 +118,7 @@ md-header-row {
   color: #8f9ca3 !important;
 }
 
-.mat-select-trigger,
-.mat-select-arrow {
-  color: #8f9ca3 !important;
-  font-size: 14px !important;
-}
+
 
 .mat-input-suffix {
   margin: auto !important;
@@ -172,12 +168,7 @@ md-header-row {
   width: 26px !important;
 }
 
-.mat-paginator-page-size-label,
-.mat-paginator-range-label,
-.mat-paginator-increment,
-.mat-paginator-decrement {
-  margin-bottom: 10px !important;
-}
+
 
 .mat-select-panel {
   box-shadow: none !important;

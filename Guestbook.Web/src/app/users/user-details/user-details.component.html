@@ -1,70 +1,70 @@
-<div class="title-page">Детали пользователя
+<div class="title-page {{styleComponent}} {{styleTitle}}">{{title}}
 </div>
-<form *ngIf="model"  class="form-container" (submit)="onSave(detailsForm)" #detailsForm="ngForm" fxLayoutGap="2em">
+<form *ngIf="model"  class="form-container" (submit)="onSave(detailsForm)" #detailsForm="ngForm">
 
         <div fxLayout="column" fxLayoutGap="0.2em">
 
-            <span class="details-text-margin">Имя пользователя</span>
+            <span class="details-text-margin  {{styleComponent}} ">Имя пользователя</span>
             <md-input-container floatPlaceholder="never">
                 <input mdInput type="text" placeholder="Иван Иванов" [(ngModel)]="model.name" name="name" #name="ngModel" required minlength="3"
                     maxlength="30">
-                <md-error [hidden]="name.valid || name.hasError('minlength')">
+                <md-error class="{{styleComponent}}"  [hidden]="name.valid || name.hasError('minlength')">
                     Не указано имя пользователя
                 </md-error>
-                <md-error [hidden]="!name.hasError('minlength')">
+                <md-error class="{{styleComponent}}"   [hidden]="!name.hasError('minlength')">
                     В имени должно быть как минимум 3 символа
                 </md-error>
             </md-input-container>
 
-            <span class="details-text-margin">Логин пользователя</span>
+            <span class="details-text-margin  {{styleComponent}}">Логин пользователя</span>
             <md-input-container floatPlaceholder="never">
                 <input mdInput type="text" placeholder="Иван Иванов" [(ngModel)]="model.login" name="login" #login="ngModel" required minlength="3"
                     maxlength="30">
-                <md-error [hidden]="login.valid || login.hasError('minlength')">
+                <md-error class="{{styleComponent}}"   [hidden]="login.valid || login.hasError('minlength')">
                     Не указан логин пользователя
                 </md-error>
-                <md-error [hidden]="!login.hasError('minlength')">
+                <md-error class="{{styleComponent}}"   [hidden]="!login.hasError('minlength')">
                     Логин должен иметь как минимум 3 символа
                 </md-error>
             </md-input-container>
 
-            <span class="details-text-margin">Email</span>
+            <span class="details-text-margin  {{styleComponent}}">Email</span>
             <md-input-container floatPlaceholder="never">
                 <input mdInput type="email" [formControl]="emailFormControl" placeholder="Email" [(ngModel)]="model.email" name="email" maxlength="50"
                     required>
-                <md-error *ngIf="emailFormControl.hasError('pattern')">
+                <md-error class="{{styleComponent}}"   *ngIf="emailFormControl.hasError('pattern')">
                     Введите валидный email
                 </md-error>
-                <md-error *ngIf="emailFormControl.hasError('required')">
+                <md-error class="{{styleComponent}}"   *ngIf="emailFormControl.hasError('required')">
                     Не указан email
                 </md-error>
             </md-input-container>
 
             <div fxLayout="column">
-                <span class="details-text-margin">Телефон</span>
+                <span class="details-text-margin  {{styleComponent}}">Телефон</span>
                 <phone-number  phoneName="phone1" required maxlength="10" minlength="10" 
             [showPhoneField]="'true'" [(phoneField)]="model.phone" placeholder="9994576146">
         </phone-number>
             </div>
 
             <div *ngIf="showPasswordFields" fxLayout="column">
-                <span class="details-text-margin">Пароль</span>
-                <md-input-container floatPlaceholder="never">
+                <span class="details-text-margin  {{styleComponent}}">Пароль</span>
+                <md-input-container  floatPlaceholder="never">
                     <input mdInput type="password" placeholder="Пароль" [(ngModel)]="model.password" #password="ngModel" name="password" minlength="6"
                         maxlength="30" required>
-                    <md-error [hidden]="password.valid || password.hasError('minlength')">
+                    <md-error class="{{styleComponent}}"   [hidden]="password.valid || password.hasError('minlength')">
                         Не указан пароль
                     </md-error>
-                    <md-error [hidden]="!password.hasError('minlength')">
+                    <md-error class="{{styleComponent}}"   [hidden]="!password.hasError('minlength')">
                         Пароль должен содержать минимум 6 символов
                     </md-error>
                 </md-input-container>
 
-                <span class="details-text-margin">Подтверждение</span>
+                <span class="details-text-margin  {{styleComponent}}" >Подтверждение</span>
                 <md-input-container floatPlaceholder="never">
                     <input mdInput type="password" placeholder="Подтверждение" [(ngModel)]="passwordConfirmation" maxlength="30" name="passwordConfirmation"
                         required>
-                    <md-error [hidden]="password.valid">
+                    <md-error  class="{{styleComponent}}"   [hidden]="password.valid">
                         Не указано подтверждение
                     </md-error>
                 </md-input-container>
@@ -77,7 +77,7 @@
                 <button style="width:160px; margin: 10px 0px" type="button" (click)="onShowPasswordFiels()" md-button>Изменить пароль</button>
             </div>
             <div>
-                <button style="width:200px;" type="submit" color="accent" md-raised-button>Сохранить пользователя</button>
+                <button style="width:250px;" type="submit" color="accent" md-raised-button>{{textButton}}</button>
             </div>
         </div>
 
