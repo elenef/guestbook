@@ -1,3 +1,4 @@
+import { LoginModule } from './login/login.module';
 
 import { CdkTableModule } from '@angular/cdk';
 import { PageDetailsComponent } from './shared/components/page-details/page-details.component';
@@ -23,9 +24,10 @@ import { UserModule } from "./users/user-details/user.module";
 import { ReviewsListModule } from "./api/reviews-list/reviews-list.module";
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ import { ReviewsListModule } from "./api/reviews-list/reviews-list.module";
     MdDatepickerModule,
     MdNativeDateModule,
     UserModule,
-    ReviewsListModule
+    ReviewsListModule,
+    LoginModule
 
   ],
   providers: [

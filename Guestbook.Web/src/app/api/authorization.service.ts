@@ -34,9 +34,9 @@ export class AuthorizationService {
         this.router.navigate(["/login"]);
     }
 
-    authorize(username: string, password: string): Observable<void> {
-        return new Observable<void>((observable: any) => {
-        });
+    authorize(username: string, password: string){
+        this.requestAuthorization = false;
+        this.router.navigate(["/reviews"]);
     }
 
 }

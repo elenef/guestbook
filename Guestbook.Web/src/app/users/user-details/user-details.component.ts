@@ -7,7 +7,7 @@ import { MessageService } from './../../shared/services/message.service';
 import { UserDetailsService } from './user-details.service';
 import { User } from './../../api/contracts/user';
 import { PageDetailsComponent } from './../../shared/components/page-details/page-details.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule, NgModel } from '@angular/forms';
 import * as _ from 'underscore';
 
@@ -26,6 +26,12 @@ export class UserDetailsComponent extends PageDetailsComponent<User> implements 
   passwordConfirmation: string;
   disabled = true;
 
+  @Input() title = 'Детали пользователя';
+
+  @Input() textButton = 'Сохранить';
+
+  @Input() styleComponent;
+  @Input() styleTitle;
 
   constructor(
     private service: UserDetailsService,

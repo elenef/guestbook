@@ -6,6 +6,8 @@ export class Review {
     userName: string;
     email: string;
     ratingRestaurant: number;
+    like: number; 
+
 
 
     constructor(data?: any) {
