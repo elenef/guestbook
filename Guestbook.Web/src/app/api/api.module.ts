@@ -12,7 +12,6 @@ import { BaseApiService } from './base-api.service';
 
 @NgModule({
     imports: [HttpModule],
-    declarations: [],
     providers: [
         BaseApiService,
         AuthorizationService,

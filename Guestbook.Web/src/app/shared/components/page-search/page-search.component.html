@@ -1,0 +1,10 @@
+<div class="table-header page-search">
+  <md-input-container class="md-input-container-gray md-input-container-search" floatPlaceholder="never">
+    <input mdInput type="search" [(ngModel)]="search" mdInput [placeholder]="placeholder">
+    <div mdSuffix (click)="onChange(search)">
+      <md-icon class="notranslate">search</md-icon>
+    </div>
+  </md-input-container>
+</div>
+
+

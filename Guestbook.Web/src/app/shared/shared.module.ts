@@ -1,3 +1,5 @@
+import { PageSearchComponent } from './components/page-search/page-search.component';
+import { UnixDatePipe } from './pipes/unix-date.pipe';
 
 
 import { NgModule } from '@angular/core';
@@ -13,6 +15,7 @@ import { CdkTableModule } from '@angular/cdk';
 import { PageDetailsComponent } from './components/page-details/page-details.component';
 import {MdSidenavModule} from '@angular/material';
 import { AppRoutingModule } from '../app-routing.module';
+import { PhoneNumberComponent} from "./components/index";
 
 
 @NgModule({
@@ -26,8 +29,14 @@ import { AppRoutingModule } from '../app-routing.module';
     AppRoutingModule
     ],
   declarations: [
+    PhoneNumberComponent,
+     UnixDatePipe,
+    PageSearchComponent
     ],
   exports: [
+    PhoneNumberComponent,
+    UnixDatePipe,
+    PageSearchComponent
     ],
 })
 export class SharedModule { }
