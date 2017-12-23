@@ -20,7 +20,7 @@ export class ReviewsListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
   ) { }
-
+/*
   ngOnInit() {
     this.route.queryParams
       .subscribe((queryParams: any) => {
@@ -37,7 +37,21 @@ export class ReviewsListComponent implements OnInit {
           this.restaurants = res.data;
         });
       });
-  }
+  }*/
+   ngOnInit() {
+    this.reviews = [
+      new Review({ userName: 'Tommy', restaurantName: 'KFC', 
+      comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
+      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
+      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
+      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
+      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
+      new Review({ comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae dictum sapien, eget dapibus tortor. Phasellus maximus egestas quam id convallis. Nulla fermentum facilisis erat sit amet faucibus. Nullam' }),
+    ];
+    /*this.reviewsListService.getReviewsList().subscribe((res) => {
+      this.reviews = res.data;
+    });*/
+}
 
   onFiltrationReviews() {
     let parameters = {
