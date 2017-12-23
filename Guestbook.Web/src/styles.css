@@ -22,7 +22,7 @@
 }
 
 .mat-input-wrapper {
-  padding: 0 !important;
+  padding-bottom: 10px !important;
 }
 
 .md-input-container-search .mat-input-suffix {
@@ -130,7 +130,7 @@ md-header-row {
 
 .mat-input-container,
 .mat-select {
-  width: 180px !important;
+  width: 250px !important;
 }
 
 .mat-input-container {

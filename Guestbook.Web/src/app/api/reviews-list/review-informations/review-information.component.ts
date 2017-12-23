@@ -5,6 +5,7 @@ import { MdDialogRef } from '@angular/material';
 import { MessageService } from '../../../shared/services/message.service';
 import { Review } from '../../contracts/review';
 import * as _ from 'underscore';
+import { ReviewsListService } from "../reviews-list.service";
 
 
 @Component({
@@ -21,19 +22,33 @@ export class ReviewInformationDialogComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private messageService: MessageService,
+    private reviewsListService: ReviewsListService,
   ) {
   }
 
 
   ngOnInit() {
-      console.log(this.review);
   }
 
   onCancel() {
     this.dialogRef.close();
   }
 
-   getRandomInt(min, max) {
+  onLikeReview(review: Review) {
+    /*
+     * while backend not update
+    */
+    //review.like = review.like ? review.like++ : 1;
+    this.updateReview(review);
+  }
+
+  getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  updateReview(review: Review) {
+    this.reviewsListService.updateReview(review).subscribe((res) => {
+      this.review = res;
+    });
   }
 }
