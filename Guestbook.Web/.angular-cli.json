@@ -22,7 +22,8 @@
         "styles.css",
         "css/material-theme.scss",
         "css/material-light.min.css",
-        "css/material.min.css"
+        "css/material.min.css",
+        "../node_modules/typeface-montserrat/index.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

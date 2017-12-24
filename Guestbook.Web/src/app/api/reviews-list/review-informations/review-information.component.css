@@ -1,19 +1,161 @@
-md-card{
-    box-shadow: none!important;
-    padding: 14px!important;
-    width: 700px!important;
+md-card {
+  box-shadow: none!important;
+  padding: 14px!important;
+  width: 700px!important;
 }
 
-.options-container{
-    padding-right: 14px!important;
+.options-container {
+  padding-right: 14px!important;
 }
 
-.cancel-btn{
-    width: 80px;
-    height: 30px!important;
-    line-height: 20px;
+.cancel-btn {
+  width: 80px;
+  height: 30px!important;
+  line-height: 20px;
 }
 
-.cancel-btn:hover{
-    background-color: lightgray;
+.cancel-btn:hover {
+  background-color: lightgray;
+}
+
+body {
+  margin: 0;
+}
+
+.mat-sidebar-subheader {
+  cursor: default;
+}
+
+.mat-sidebar {
+  padding-left: 0px;
+  min-width: 200px;
+}
+
+.mat-card-content-icon-star {
+  font-size: 14px;
+  color: #F7F761 !important;
+  width: 14px;
+  height: 14px;
+}
+
+.list {
+  min-height: 100% !important;
+  height: 100%;
+}
+
+.mat-card-content-text {
+  font-size: 16px;
+}
+
+.mat-card-content-sub-title {
+  font-size: 14px;
+}
+
+.mat-card-content-icon-favorite:hover {
+  transform: scale();
+  -webkit-transform: scale(1.2);
+  transition: 0.1s linear;
+  color: #FA0606;
+  cursor: pointer;
+}
+
+.mat-header-content-title {
+  line-height: 1.4;
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: 32px;
+  font-weight: 600;
+  cursor: default;
+}
+
+
+.mat-card-content-title {
+
+  font-size: 18px;
+}
+
+.mat-sidebar-text {
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: bolder;
+  line-height: 10px;
+}
+
+/deep/ .mat-list-item-content {
+  padding: 0 !important;
+}
+
+.mat-font-family {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mat-sidebar-subheader {
+  box-shadow: 0 2px 1px -1px #A7A5A5;
+  background: rgba(0, 0, 0, 0.02);
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mat-sidebar-item-text {
+  line-height: 28px;
+}
+
+.mat-list-card {
+  width: 49%;
+  margin-bottom: 10px !important;
+}
+
+.mat-list {
+  padding-top: 0;
+}
+
+.header {
+  width: 100%;
+  min-height: 180px;
+  height: 30%;
+}
+
+.sidebar {
+  padding-top: 4px;
+  width: 20%;
+  height: 100%;
+}
+
+.content {
+  padding: 4px;
+  width: 80%;
+  height: 100%;
+}
+
+.logo {
+  width: 20%;
+  height: 100%;
+}
+
+.logo-img {
+  width: 100%;
+  background: url("../../../../assets/logo1.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+
+
+.header-content {
+  width: 80%;
+  height: 100%;
+}
+
+
+
+.mat-header-content-exit-decoration {
+  text-decoration: underline;
+}
+
+
+
+.mat-card-content-button-favorite {
+  width: 24px;
+  height: 24px;
 }

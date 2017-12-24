@@ -1,3 +1,4 @@
+import { ShortCommentPipe } from './pipes/short-comment.pipe';
 import { PageSearchComponent } from './components/page-search/page-search.component';
 import { UnixDatePipe } from './pipes/unix-date.pipe';
 
@@ -31,12 +32,14 @@ import { PhoneNumberComponent} from "./components/index";
   declarations: [
     PhoneNumberComponent,
      UnixDatePipe,
-    PageSearchComponent
+    PageSearchComponent,
+    ShortCommentPipe
     ],
   exports: [
     PhoneNumberComponent,
     UnixDatePipe,
-    PageSearchComponent
+    PageSearchComponent,
+    ShortCommentPipe
     ],
 })
 export class SharedModule { }

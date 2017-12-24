@@ -57,7 +57,7 @@ body {
 
 
 .mat-sidebar-item:not(.active):hover {
-  background: rgba(0, 0, 0, 0.09);
+  background: rgba(0, 0, 0, 0.2);
   color: #FFFFFF;
   transition: 1s;
 }
@@ -78,8 +78,11 @@ body {
 
 
 .mat-header-content-title{
-  color: #068F81;
-  font: 400 32px 'Roboto','Helvetica Neue','sans-serif';
+  color: #ffffff;
+  line-height: 1.4;
+  font-family: 'Montserrat', 'sans-serif';
+  font-size:32px;
+  font-weight: 600;
   cursor: default;
 }
 
@@ -93,14 +96,14 @@ body {
 }
 
 .mat-sidebar-item {
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(0, 0, 0, 0.1);
   color: #0C0202;
-  margin-bottom: 2px;
+  border-bottom: 1px solid #258372;
 }
 
 .mat-sidebar-text {
-  color: #BBFFFA;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  font-family: 'Montserrat', 'sans-serif';
   font-weight: bolder;
   line-height: 10px;
 }
@@ -165,7 +168,7 @@ a {
 
 .logo-img{
   width: 100%;
-  background: url("../../../assets/logo.png") no-repeat; 
+  background: url("../../../assets/logo1.png") no-repeat; 
   background-size: contain;
   background-position: center center;
 }
@@ -183,7 +186,7 @@ a {
 }
 
 .mat-header-content-exit-text{
- color: #065854;
+ color: #FFFFFF;
  font-size: 18px;
 }
 .mat-header-content-exit-decoration{
@@ -192,7 +195,7 @@ a {
 
 .mat-header-content-exit-icon{
   font-size: 24px;
-  color: #065854;
+  color: #FFFFFF;
 }
 
 .mat-header-content-exit-icon-position{

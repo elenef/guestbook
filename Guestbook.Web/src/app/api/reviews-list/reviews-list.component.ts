@@ -40,9 +40,9 @@ export class ReviewsListComponent implements OnInit {
     });
   }
 
-  onShowReview() {
+  onShowReview(review: any) {
     const dialogRef = this.dialog.open(ReviewInformationDialogComponent);
-    dialogRef.componentInstance.review = this.reviews[0];
+    dialogRef.componentInstance.review = review;
   }
 
 

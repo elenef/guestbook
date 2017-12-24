@@ -7,7 +7,7 @@
       <div fxFlex="20%" class="mat-header-content-exit" fxLayout="row" fxLayoutAlign="end start">
         <div>
           <a class="mat-header-content-exit-text mat-header-content-exit-decoration" href="#">Иванов И.В.</a>
-          <a class="mat-header-content-exit-icon" href="#">
+          <a class="mat-header-content-exit-icon" routerLink="/login">
             <md-icon class="mat-header-content-exit-icon-position">exit_to_app</md-icon>
           </a>
         </div>
@@ -55,7 +55,7 @@
     <div class="content" *ngIf="reviews">
       <div *ngIf="!reviews.length">По вашему запросу ничего не найдено</div>
       <div *ngIf="reviews.length" fxFill class="mat-list" fxLayout="row" fxLayoutWrap fxLayoutGap="10px">
-        <md-card fxLayout="column" fxLayoutAlign="space-between none" *ngFor="let review of reviews" class="mat-list-card mat-list-card-background">
+        <md-card fxLayout="column" fxLayoutAlign="space-between none" *ngFor="let review of reviews; let i = index" (click)="onShowReview(reviews[i])" class="mat-list-card mat-list-card-background">
           <md-card-header>
             <div md-card-avatar class="mat-card-content-img" [style.background]="colors[getRandomInt(0,colors.length)]" fxLayout="row"
               fxLayoutAlign="center center" class="mat-card-content-img-text mat-font-family">
@@ -66,7 +66,7 @@
           </md-card-header>
           <md-card-content class="mat-card-content-comment">
             <p class="mat-card-content-text mat-font-family">
-              {{review.comment}}
+              {{review.comment | shortcomment}}
             </p>
           </md-card-content>
           <div fxLayout="row" fxLayoutAlign="space-between end">
