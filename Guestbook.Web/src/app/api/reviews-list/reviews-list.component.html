@@ -18,10 +18,10 @@
       <div fxFlex="30%">
         <page-search class="page-header-search" [search]="search" (searchChange)="onSearch($event)" placeholder="Введите для поиска..."></page-search>
       </div>
-      <div fxFlex="30%">
+      <div fxFlex="30%" fxLayout="row" fxLayoutGap="20px" >
         <div fxLayoutGap="20px" fxLayout="row" fxLayout.xs="column">
           <div fxLayoutAlign="start center" fxLayoutGap="0.5em">
-            <span class="span_filter">Период:</span>
+            <span class="title-header title-filter">Период:</span>
             <md-input-container floatPlaceholder="never">
               <input mdInput [mdDatepicker]="picker" [(ngModel)]="dateFrom" (ngModelChange)="onStartDateChange()" placeholder="начало периода">
               <button mdSuffix [mdDatepickerToggle]="picker"></button>
@@ -34,6 +34,14 @@
             </md-input-container>
             <md-datepicker #pickerOne></md-datepicker>
           </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="0.5em">
+          <span class="title-header title-sort">Сортировать по:</span>
+          <md-select floatPlaceholder="never" placeholder="возрастанию даты" name="typeSort" [(ngModel)]="typeSort" (ngModelChange)="onSort()">
+            <md-option *ngFor="let typeSort of typesSort" [value]="typeSort.value">
+              {{ typeSort.viewValue }}
+            </md-option>
+          </md-select>
         </div>
       </div>
     </div>
@@ -55,13 +63,15 @@
     <div class="content" *ngIf="reviews">
       <div *ngIf="!reviews.length">По вашему запросу ничего не найдено</div>
       <div *ngIf="reviews.length" fxFill class="mat-list" fxLayout="row" fxLayoutWrap fxLayoutGap="10px">
-        <md-card fxLayout="column" fxLayoutAlign="space-between none" *ngFor="let review of reviews" class="mat-list-card mat-list-card-background">
+        <md-card fxLayout="column" fxLayoutAlign="space-between none" *ngFor="let review of reviews" (click)="onShowReview(review)"
+          class="mat-list-card mat-list-card-background">
           <md-card-header>
             <div md-card-avatar class="mat-card-content-img" [style.background]="colors[getRandomInt(0,colors.length)]" fxLayout="row"
               fxLayoutAlign="center center" class="mat-card-content-img-text mat-font-family">
               <div>{{review.userName[0]}}</div>
             </div>
-            <md-card-title class="mat-card-content-title mat-font-family">{{review.restaurantName}} ({{review.ratingRestaurant}} <md-icon class="mat-card-content-icon-star">star</md-icon>)</md-card-title>
+            <md-card-title class="mat-card-content-title mat-font-family">{{review.restaurantName}} ({{review.ratingRestaurant}}
+              <md-icon class="mat-card-content-icon-star">star</md-icon>)</md-card-title>
             <md-card-subtitle class="mat-card-content-sub-title mat-font-family">{{review.userName}}</md-card-subtitle>
           </md-card-header>
           <md-card-content class="mat-card-content-comment">
@@ -85,8 +95,8 @@
       </div>
 
 
-       
-      
+
+
     </div>
   </div>
 </div>

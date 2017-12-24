@@ -214,3 +214,24 @@ a {
   width: 24px;
   height: 24px;
 }
+
+md-select{
+    max-height: 30px!important;
+    margin-top: 5px!important;
+}
+.title-header{
+
+}
+
+.title-sort{
+  margin-top: 12px;
+}
+
+.title-filter{
+  margin-top: -12px;
+}
+
+>>>.mat-select-trigger{
+  font: inherit!important;
+  font-size: 14px!important;
+}
