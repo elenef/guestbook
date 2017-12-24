@@ -61,3 +61,5 @@ node_modules/*
 */packages/*
 */packages/*
 */node_modules/*
+Guestbook.WebApi/.vs/GuestBook/v15/Server/sqlite3/storage.ide-shm
+Guestbook.WebApi/.vs/GuestBook/v15/Server/sqlite3/storage.ide-wal
