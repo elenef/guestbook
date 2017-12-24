@@ -1,5 +1,8 @@
 <div class="main">
+    <md-progress-bar *ngIf = "inProgressState" mode="indeterminate"></md-progress-bar>
 
-    <div fxFill class="main_content"><router-outlet></router-outlet></div>
+    <div fxFill class="main_content">
+        <router-outlet></router-outlet>
+        </div>
     
 </div>
