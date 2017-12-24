@@ -16,5 +16,15 @@ export class LoginService {
 
     login(username: string, password: string) {
         this.authorizationService.authorize(username, password);
+        /*this.authorizationService.authorize(username, password)
+            .subscribe(() => {
+                this.authorizationService.fillUserProfile()
+                    .subscribe(() => {
+                        let redirectUrl = this.authorizationService.redirectUrl;
+                        let url = redirectUrl ? redirectUrl : "";
+                        this.router.navigateByUrl(url);
+                    });
+            }, error => {
+            });*/
     }
 }

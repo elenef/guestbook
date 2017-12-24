@@ -7,6 +7,14 @@ export class ApiEndpoints {
         return  Config.apiUrl;
     }
 
+    static token() {
+        return ApiEndpoints.BaseApiUrl + '/connect/token';
+    }
+
+    static profile() {
+        return ApiEndpoints.BaseApiUrl + '/profiles'; 
+    }
+
     static users(): ApiEndpoint {
         return new ApiEndpointBase(ApiEndpoints.BaseApiUrl + '/users');
     }
