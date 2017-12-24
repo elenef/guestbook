@@ -1,0 +1,45 @@
+<div class="title-page">Добавление ресторана
+</div>
+
+<form class="form-container" (submit)="onCreateRestaurant(detailsForm)" #detailsForm="ngForm" fxLayoutGap="2em">
+    <div fxLayout="column" fxLayoutGap="0.2em">
+
+
+        <span class="details-text-margin">Название ресторана</span>
+        <md-input-container floatPlaceholder="never">
+            <input mdInput type="text" placeholder="Контанелла" [(ngModel)]="restaurant.name" name="name" #name="ngModel" required minlength="3"
+                maxlength="30">
+            <md-error [hidden]="name.valid || name.hasError('minlength')">
+                Не указано название расторана
+            </md-error>
+            <md-error [hidden]="!name.hasError('minlength')">
+                В названии ресторана должно быть как минимум 3 символа
+            </md-error>
+        </md-input-container>
+
+        <span class="details-text-margin">Адрес ресторана</span>
+        <md-input-container floatPlaceholder="never">
+            <input mdInput type="text" placeholder="ул. Мира, 11" [(ngModel)]="restaurant.address" name="address" #address="ngModel" required minlength="3"
+                maxlength="30">
+            <md-error [hidden]="address.valid || address.hasError('minlength')">
+                Не указано адрес расторана
+            </md-error>
+            <md-error [hidden]="!address.hasError('minlength')">
+                В адресе ресторана должно быть как минимум 3 символа
+            </md-error>
+        </md-input-container>
+
+
+        <span class="details-text-margin">Описание ресторана</span>
+        <md-input-container class="text-area">
+            <textarea mdInput name="description" [(ngModel)]="restaurant.description" #description="ngModel" maxlength="255" ></textarea>
+        </md-input-container>
+
+
+        <div fxLayoutAlign="end end" fxLayoutGap="5px" class="options-container">
+            <button (click)="onCancel()" class="cancel-btn" md-raised-button>Отмена</button>
+            <button class="accept-btn" type="submit" color="accent" md-raised-button>Добавить ресторан</button>
+        </div>
+    </div>
+
+</form>

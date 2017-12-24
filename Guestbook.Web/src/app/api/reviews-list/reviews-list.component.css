@@ -258,3 +258,8 @@ md-select{
     content: "\2605";
     position: absolute;
 }
+
+
+.mat-menu-button-color{
+  color: white;
+}

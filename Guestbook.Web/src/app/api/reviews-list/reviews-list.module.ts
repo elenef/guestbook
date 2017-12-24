@@ -13,14 +13,17 @@ import { ReviewDetailsDialogComponent } from './review-details-dialog/review-det
 import { ReviewsDetailsDialogService } from './review-details-dialog/review-details-dialog.service';
 import { ReviewInformationDialogComponent } from './review-informations/review-information.component';
 import { CustomDateAdapter } from "./custom-adapter-date";
+import { RestaurantDetailsDialogComponent } from "./restaurant-details-dialog/restaurant-details-dialog.component";
+import { RestaurantDetailsDialogService } from "./restaurant-details-dialog/restaurant-details-dialog.service";
 
 @NgModule({
   imports: [
     FlexLayoutModule, MaterialModule, SharedModule, CommonModule,
     FormsModule, ApiModule,  RouterModule, MdTableModule, CdkTableModule, ReactiveFormsModule, MdDatepickerModule, MdNativeDateModule
   ],
-  declarations: [ReviewsListComponent, ReviewDetailsDialogComponent, ReviewInformationDialogComponent],
-  providers: [ReviewsListService, ReviewsDetailsDialogService, { provide: DateAdapter, useClass: CustomDateAdapter }],
-  entryComponents: [ReviewDetailsDialogComponent, ReviewInformationDialogComponent]
+  declarations: [ReviewsListComponent, ReviewDetailsDialogComponent, ReviewInformationDialogComponent, RestaurantDetailsDialogComponent],
+  providers: [ReviewsListService, ReviewsDetailsDialogService, RestaurantDetailsDialogService, 
+    { provide: DateAdapter, useClass: CustomDateAdapter }],
+  entryComponents: [ReviewDetailsDialogComponent, ReviewInformationDialogComponent, RestaurantDetailsDialogComponent]
 })
 export class ReviewsListModule { }

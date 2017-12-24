@@ -6,6 +6,11 @@
     <div class="header-content" fxLayout="column">
       <div fxFlex="20%" class="mat-header-content-exit" fxLayout="row" fxLayoutAlign="end start">
         <div>
+              <button class="mat-menu-button-color" md-button [mdMenuTriggerFor]="menu">Меню</button>
+            <md-menu #menu="mdMenu">
+              <button md-menu-item routerLink="/users">Пользователи</button>
+              <button md-menu-item (click)="onCreateRestaurant()">Добавить ресторан</button>
+            </md-menu>
           <a class="mat-header-content-exit-text mat-header-content-exit-decoration" href="#">Иванов И.В.</a>
           <a class="mat-header-content-exit-icon" routerLink="/login">
             <md-icon class="mat-header-content-exit-icon-position">exit_to_app</md-icon>
