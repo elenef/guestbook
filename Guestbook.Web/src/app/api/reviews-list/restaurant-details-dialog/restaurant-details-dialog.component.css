@@ -1,0 +1,76 @@
+.title-page{
+    font-size: 18px;
+    color: gray;
+    padding:  10px 0px;
+}
+
+.form-container{
+    padding:  10px 0px;
+}
+md-input-container, md-select{
+    min-width: 350px;
+}
+
+.title-container{
+    margin-bottom: 5px;
+}
+
+.title-page-container{
+    color: #198CC7;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.cancel-btn{
+    width: 80px;
+    height: 30px!important;
+    line-height: 20px;
+}
+
+.cancel-btn:hover{
+    background-color: lightgray;
+}
+
+.accept-btn{
+    width: 150px;
+    height: 30px!important;
+    line-height: 20px;
+}
+
+.options-container{
+    margin-top: 20px;
+}
+
+md-slider{
+    padding: 
+}
+
+.rating-text{
+    width: 190px!important;
+}   
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    margin-bottom: 10px;
+}
+
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    font-size: 20px;
+    color: #00897b;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+}
+
+.fill-color ~ span:before{
+    content: "\2605";
+    position: absolute;
+}

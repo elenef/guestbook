@@ -7,6 +7,7 @@ import { ReviewInformationDialogComponent } from "./review-informations/review-i
 import { Restaurant } from "../contracts/restaurant";
 import { Router, ActivatedRoute } from '@angular/router';
 import { DateTime } from "../../shared/utils/date-time";
+import { RestaurantDetailsDialogComponent } from "./restaurant-details-dialog/restaurant-details-dialog.component";
 
 @Component({
   selector: 'app-reviews-list',
@@ -49,6 +50,13 @@ export class ReviewsListComponent implements OnInit {
     const dialogRef = this.dialog.open(ReviewDetailsDialogComponent);
     dialogRef.afterClosed().subscribe(() => {
       this.getReviewsList();
+    });
+  }
+
+  onCreateRestaurant(){
+    const dialogRef = this.dialog.open(RestaurantDetailsDialogComponent);
+    dialogRef.afterClosed().subscribe(() => {
+      this.reviewsListService.getRestaurantsList();
     });
   }
 
