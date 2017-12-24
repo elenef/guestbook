@@ -1,11 +1,11 @@
-import { Restaurant } from './../contracts/restaurant';
 import { Review } from './../contracts/review';
-import { Router, ActivatedRoute } from '@angular/router';
 import { ReviewsListService } from './reviews-list.service';
 import { Component, OnInit } from '@angular/core';
 import { MdDialog } from '@angular/material';
 import { ReviewDetailsDialogComponent } from "./review-details-dialog/review-details-dialog.component";
 import { ReviewInformationDialogComponent } from "./review-informations/review-information.component";
+import { Restaurant } from "../contracts/restaurant";
+import { Router, ActivatedRoute } from '@angular/router';
 import { DateTime } from "../../shared/utils/date-time";
 
 @Component({
@@ -25,6 +25,18 @@ export class ReviewsListComponent implements OnInit {
   startTimeStamp: number = 0;
   endTimeStamp: number = 0;
   unixDay: number = 86399;
+
+  orderBy: string = 'created';
+  orderDesc: boolean = false;
+
+  typesSort = [
+    { value: 'asc', viewValue: 'возрастанию даты' },
+    { value: 'desc', viewValue: 'убыванию даты' },
+  ];
+
+  typeSort: string = "";
+
+
   constructor(
     private reviewsListService: ReviewsListService,
     protected dialog: MdDialog,
@@ -40,7 +52,7 @@ export class ReviewsListComponent implements OnInit {
     });
   }
 
-  onShowReview(review: any) {
+  onShowReview(review: Review) {
     const dialogRef = this.dialog.open(ReviewInformationDialogComponent);
     dialogRef.componentInstance.review = review;
   }
@@ -68,6 +80,14 @@ export class ReviewsListComponent implements OnInit {
           this.endTimeStamp = dateTo;
           this.dateTo = new DateTime(this.endTimeStamp).formatLocal('DD-MM-YYYY');
         }
+        let orderBy = queryParams['orderBy'];
+        if (orderBy) {
+          this.orderBy = orderBy;
+        }
+        let orderDesc = queryParams['orderDesc'];
+        if (orderDesc) {
+          this.orderDesc = orderDesc;
+        }
         this.getReviewsList();
         this.reviewsListService.getRestaurantsList().subscribe((res) => {
           this.restaurants = res.data;
@@ -75,14 +95,14 @@ export class ReviewsListComponent implements OnInit {
       });
   }
 
-
-
   onFiltrationReviews() {
     let parameters = {
       'search': this.search,
       'restaurantName': this.restaurantName,
       'dateFrom': this.startTimeStamp,
       'dateTo': this.endTimeStamp,
+      'orderBy': this.orderBy,
+      'orderDesc': this.orderDesc,
     };
 
     for (let parameter in parameters) {
@@ -91,15 +111,17 @@ export class ReviewsListComponent implements OnInit {
       }
     }
 
+
+
     this.router.navigate(['reviews'], { queryParams: parameters });
   }
 
 
   getReviewsList() {
-    this.reviewsListService.getReviewsList(this.restaurantName, this.search, 
-                this.startTimeStamp, this.endTimeStamp).subscribe((res) => {
-    this.reviews = res.data;
-    });
+    this.reviewsListService.getReviewsList(this.restaurantName, this.search,
+      this.startTimeStamp, this.endTimeStamp, this.orderBy, this.orderDesc).subscribe((res) => {
+        this.reviews = res.data;
+      });
   }
 
   updateReview(review: Review) {
@@ -118,7 +140,10 @@ export class ReviewsListComponent implements OnInit {
   }
 
   onLikeReview(review: Review) {
-    review.like = review.like ? ++review.like : 1;
+    /*
+     * while backend not update
+    */
+    //review.like = review.like ? review.like++ : 1;
     this.updateReview(review);
   }
 
@@ -137,6 +162,12 @@ export class ReviewsListComponent implements OnInit {
     } else {
       this.endTimeStamp = 0;
     }
+    this.onFiltrationReviews();
+  }
+
+  onSort() {
+    let ascTypeSort = 'asc';
+    this.orderDesc = this.typeSort === ascTypeSort ? false : true;
     this.onFiltrationReviews();
   }
 

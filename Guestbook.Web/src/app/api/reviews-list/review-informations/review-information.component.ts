@@ -35,10 +35,7 @@ export class ReviewInformationDialogComponent implements OnInit {
   }
 
   onLikeReview(review: Review) {
-    /*
-     * while backend not update
-    */
-    //review.like = review.like ? review.like++ : 1;
+    review.like = review.like ? review.like++ : 1;
     this.updateReview(review);
   }
 

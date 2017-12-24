@@ -147,15 +147,34 @@ a {
   height: 100%;
 }
 
-
-
 .mat-header-content-exit-decoration {
   text-decoration: underline;
 }
 
 
-
 .mat-card-content-button-favorite {
   width: 24px;
   height: 24px;
+}
+.cancel-btn:hover{
+    background-color: lightgray;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    font-size: 20px;
+    color: #00897b;
+}
+
+
+.fill-color ~ span:before{
+    content: "\2605";
+    position: absolute;
 }

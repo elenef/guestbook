@@ -5,7 +5,16 @@
                 fxLayoutAlign="center center" class="mat-card-content-img-text mat-font-family">
                 <div>{{review.userName[0]}}</div>
             </div>
-            <md-card-title class="mat-card-content-title mat-font-family">{{review.restaurantName}} ({{review.ratingRestaurant}} <md-icon class="mat-card-content-icon-star">star</md-icon>)</md-card-title>
+            <md-card-title class="mat-card-content-title mat-font-family" fxLayout = "row">{{review.restaurantName}}
+                <div class="rating">
+                <span [hidden]="true" [class.fill-color]="review.ratingRestaurant == 5">&#9734;</span>
+                <span [class.fill-color]="review.ratingRestaurant == 4">&#9734;</span>
+                <span [class.fill-color]="review.ratingRestaurant == 3">&#9734;</span>
+                <span [class.fill-color]="review.ratingRestaurant == 2">&#9734;</span>
+                <span [class.fill-color]="review.ratingRestaurant == 1">&#9734;</span>
+                <span [class.fill-color]="review.ratingRestaurant == 0">&#9734;</span>
+              </div>
+            </md-card-title>
             <md-card-subtitle class="mat-card-content-sub-title mat-font-family">{{review.userName}}</md-card-subtitle>
         </md-card-header>
         <md-card-content class="mat-card-content-comment">
