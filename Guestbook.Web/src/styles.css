@@ -39,6 +39,18 @@
   color: black;
 }
 
+md-paginator {
+  justify-content: center!important;
+}
+
+.mat-paginator-page-size-select .mat-select-trigger {
+  min-width: 40px !important;
+}
+
+md-paginator .mat-select-value-text {
+  font-size: 12px!important;
+}
+
 .mat-input-wrapper {
   padding-bottom: 10px !important;
 }

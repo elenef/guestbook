@@ -1,3 +1,5 @@
+import { UserListComponent } from './../user-list/user-list.component';
+import { UserListService } from './../user-list/user-list.service';
 import { UserRegistrationComponent } from './../../user-registration/user-registration.component';
 import { UserDetailsService } from './../user-details/user-details.service';
 import { UserDetailsComponent } from './../user-details/user-details.component';
@@ -17,8 +19,8 @@ import { MessageService } from "../../shared/services/message.service";
 @NgModule({
   imports:      [  FlexLayoutModule, MaterialModule,
    SharedModule, CommonModule, FormsModule, ReactiveFormsModule, ApiModule, MdTableModule, CdkTableModule],
-  declarations: [ UserDetailsComponent, UserRegistrationComponent],
-  providers:    [UserDetailsService
+  declarations: [ UserDetailsComponent, UserRegistrationComponent, UserListComponent],
+  providers:    [UserDetailsService, UserListService
     ],
 })
 export class UserModule { }

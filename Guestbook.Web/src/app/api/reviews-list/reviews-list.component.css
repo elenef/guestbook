@@ -218,6 +218,10 @@ a {
   height: 24px;
 }
 
+.mat-menu-button-color{
+  color: white;
+}
+
 md-select{
     max-height: 30px!important;
     margin-top: 5px!important;

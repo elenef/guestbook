@@ -1,0 +1,18 @@
+<div fxLayout="row" [fxLayoutAlign]="fxLayoutAlignHeader"  class=" {{textStyles}} page-header-container header-content">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <div class="page-header" (click)="onHeaderClick()" [class.page-header-clicable]="allowHeaderClick">{{ header }}  </div>
+    <div *ngIf="subHeader" class="page-header-section">
+      <span>{{ subHeader }}</span>
+    </div>
+  </div>
+  <div *ngIf="searchVisible " fxShow fxHide.xs="true" fxFlex="auto"></div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+      <button class="mat-menu-button-color" md-button routerLink="/reviews">Назад!</button>
+    <button *ngIf="buttonVisible " style="background: #1CDFCE !important;" fxShow fxHide.xs="true" md-raised-button class="mdl-button" flex="33px" type="button"
+      (click)="onAdd()"><md-icon class="notranslate">add_circle_outline</md-icon> {{ buttonPlaceholder }}</button>
+  </div>
+  <page-search  class="page-header-search" *ngIf="searchVisible" [placeholder]="searchPlaceholder" fxShow fxHide.xs="true" [search]="search" (searchChange)="onSearch($event)"></page-search>
+</div>
+
+
+

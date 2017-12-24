@@ -22,6 +22,7 @@ import { MdSortModule, MdSidenavModule } from '@angular/material';
 import { ApiService } from './api/api.service';
 import { UserModule } from "./users/user-details/user.module";
 import { ReviewsListModule } from "./api/reviews-list/reviews-list.module";
+import { UserListComponent } from './users/user-list/user-list.component';
 
 
 

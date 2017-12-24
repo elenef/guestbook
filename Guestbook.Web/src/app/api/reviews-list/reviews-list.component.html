@@ -6,6 +6,11 @@
     <div class="header-content" fxLayout="column">
       <div fxFlex="20%" class="mat-header-content-exit" fxLayout="row" fxLayoutAlign="end start">
         <div>
+            <button class="mat-menu-button-color" md-button [mdMenuTriggerFor]="menu">Меню</button>
+            <md-menu #menu="mdMenu">
+              <button md-menu-item routerLink="/users">Пользователи</button>
+              <button md-menu-item>Добавить ресторан</button>
+            </md-menu>
           <a class="mat-header-content-exit-text mat-header-content-exit-decoration" href="#">Иванов И.В.</a>
           <a class="mat-header-content-exit-icon" routerLink="/login">
             <md-icon class="mat-header-content-exit-icon-position">exit_to_app</md-icon>
@@ -70,7 +75,7 @@
               fxLayoutAlign="center center" class="mat-card-content-img-text mat-font-family">
               <div>{{review.userName[0]}}</div>
             </div>
-            <md-card-title class="mat-card-content-title mat-font-family" fxLayout = "row">{{review.restaurantName}}
+            <md-card-title class="mat-card-content-title mat-font-family" fxLayout="row">{{review.restaurantName}}
               <div class="rating">
                 <span [hidden]="true" [class.fill-color]="review.ratingRestaurant == 5">&#9734;</span>
                 <span [class.fill-color]="review.ratingRestaurant == 4">&#9734;</span>

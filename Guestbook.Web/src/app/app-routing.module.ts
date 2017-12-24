@@ -1,3 +1,4 @@
+import { UserListComponent } from './users/user-list/user-list.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,7 @@ import { ReviewsListComponent } from './api/reviews-list/reviews-list.component'
 
 
 const appRoutes: Routes = [
+  { path: 'users', component: UserListComponent },
   { path: 'user', component: UserDetailsComponent },
   { path: 'user/:id', component: UserDetailsComponent},
 
