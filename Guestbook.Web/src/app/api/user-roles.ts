@@ -1,4 +1,4 @@
 export class UserRoles {
-    public static admin = "admin";
+    public static admin = "superadmin";
     public static user = "user";
 }

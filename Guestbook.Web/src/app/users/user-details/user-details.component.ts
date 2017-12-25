@@ -7,7 +7,7 @@ import { MessageService } from './../../shared/services/message.service';
 import { UserDetailsService } from './user-details.service';
 import { User } from './../../api/contracts/user';
 import { PageDetailsComponent } from './../../shared/components/page-details/page-details.component';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule, NgModel } from '@angular/forms';
 import * as _ from 'underscore';
 
@@ -20,6 +20,7 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
   providers: [MessageService]
 })
 export class UserDetailsComponent extends PageDetailsComponent<User> implements OnInit {
+  @Output() validModelSubmitted: EventEmitter<User>;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(EMAIL_REGEX)]);
@@ -48,6 +49,7 @@ export class UserDetailsComponent extends PageDetailsComponent<User> implements 
       service,
       '/users',
     );
+    this.validModelSubmitted = new EventEmitter<User>();
   }
 
   onShowPasswordFiels() {
@@ -64,7 +66,11 @@ export class UserDetailsComponent extends PageDetailsComponent<User> implements 
         this.messageService.error('Пароль и подтверждение не совпадают');
         return;
       }
-      super.onSave(form);
+      if (this.isRegistration) {
+        this.validModelSubmitted.emit(this.model);
+      } else {
+        super.onSave(form);
+      }
     }
   }
 

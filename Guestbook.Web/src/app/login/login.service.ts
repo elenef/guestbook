@@ -15,8 +15,8 @@ export class LoginService {
 
 
     login(username: string, password: string) {
-        this.authorizationService.authorize(username, password);
-        /*this.authorizationService.authorize(username, password)
+        //this.authorizationService.authorize(username, password);
+        this.authorizationService.authorize(username, password)
             .subscribe(() => {
                 this.authorizationService.fillUserProfile()
                     .subscribe(() => {
@@ -25,6 +25,6 @@ export class LoginService {
                         this.router.navigateByUrl(url);
                     });
             }, error => {
-            });*/
+            });
     }
 }

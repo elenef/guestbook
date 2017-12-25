@@ -5,6 +5,7 @@ import { Http, Response, RequestOptionsArgs, Headers, RequestOptions } from '@an
 import { Injectable } from '@angular/core';
 
 import { ApiService } from './api.service';
+import { AuthorizationService } from "./authorization.service";
 
 @Injectable()
 export class BaseApiService implements ApiService {
@@ -64,7 +65,8 @@ export class BaseApiService implements ApiService {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS, DETELE',
-            'Access-Control-Allow-Headers': '*'
+            'Access-Control-Allow-Headers': '*',
+            'Authorization': AuthorizationService.getAuthorizationHeader()
         });
         return headers;
     }

@@ -3,13 +3,13 @@
     <div class="logo">
       <div fxFill class="logo-img"></div>
     </div>
-    <div class="header-content" fxLayout="column">
+    <div  class="header-content" fxLayout="column">
       <div fxFlex="20%" class="mat-header-content-exit" fxLayout="row" fxLayoutAlign="end start">
         <div>
-              <button class="mat-menu-button-color" md-button [mdMenuTriggerFor]="menu">Меню</button>
+            <button *ngIf="isAvailable('menu')" class="mat-menu-button-color" md-button [mdMenuTriggerFor]="menu">Меню</button>
             <md-menu #menu="mdMenu">
-              <button md-menu-item routerLink="/users">Пользователи</button>
-              <button md-menu-item (click)="onCreateRestaurant()">Добавить ресторан</button>
+              <button *ngIf="isAvailable('users')" md-menu-item routerLink="/users">Пользователи</button>
+              <button *ngIf="isAvailable('addRestaurant')" md-menu-item (click)="onCreateRestaurant()">Добавить ресторан</button>
             </md-menu>
           <a class="mat-header-content-exit-text mat-header-content-exit-decoration" href="#">Иванов И.В.</a>
           <a class="mat-header-content-exit-icon" routerLink="/login">
@@ -77,12 +77,12 @@
             </div>
             <md-card-title class="mat-card-content-title mat-font-family" fxLayout="row">{{review.restaurantName}}
               <div class="rating">
-                <span [hidden]="true" [class.fill-color]="review.ratingRestaurant == 5">&#9734;</span>
-                <span [class.fill-color]="review.ratingRestaurant == 4">&#9734;</span>
-                <span [class.fill-color]="review.ratingRestaurant == 3">&#9734;</span>
-                <span [class.fill-color]="review.ratingRestaurant == 2">&#9734;</span>
-                <span [class.fill-color]="review.ratingRestaurant == 1">&#9734;</span>
-                <span [class.fill-color]="review.ratingRestaurant == 0">&#9734;</span>
+                <span [hidden]="true" [class.fill-color]="review.reviewRating == 5">&#9734;</span>
+                <span [class.fill-color]="review.reviewRating == 4">&#9734;</span>
+                <span [class.fill-color]="review.reviewRating == 3">&#9734;</span>
+                <span [class.fill-color]="review.reviewRating == 2">&#9734;</span>
+                <span [class.fill-color]="review.reviewRating == 1">&#9734;</span>
+                <span [class.fill-color]="review.reviewRating == 0">&#9734;</span>
               </div>
             </md-card-title>
             <md-card-subtitle class="mat-card-content-sub-title mat-font-family">{{review.userName}}</md-card-subtitle>
@@ -97,7 +97,7 @@
               <md-icon class="md-24 mat-card-content-icon" aria-label="icon-button with a clock icon">query_builder</md-icon>
               <div class="mat-card-content-text mat-font-family">{{review.created | unixdate}}</div>
             </div>
-            <div md-card-actions>
+            <div md-card-actions (mousedown) = "isLike = true" >
               <span class="mat-card-content-text mat-font-family">{{review.like}}</span>
               <button md-icon-button color="warn" class="mat-card-content-button-favorite" (click)="onLikeReview(review)">
                   <md-icon class="md-24 mat-card-content-icon-favorite" aria-label="icon-button with a heart icon">favorite</md-icon>

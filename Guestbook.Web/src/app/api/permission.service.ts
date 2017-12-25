@@ -8,6 +8,10 @@ export class PermissionService {
     private static adminRole = UserRoles.admin;
 
     private static permissionsMap = {
+        user: [
+            'addRestaurant',
+            'menu'
+        ],
 
     };
 

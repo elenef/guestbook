@@ -80,7 +80,7 @@ namespace GuestBook.WebApi.Services
                 throw new Exception(typeof(RegisteredUser) + id);
             }
 
-            await _userService.AddAsync(new UserContract()
+            await _userService.UpdateAsync(id, new EditUserContract()
             {
                 Email = model.Email,
                 Name = model.Name,

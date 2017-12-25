@@ -41,18 +41,18 @@ export class AuthorizationService {
 
 
     /**Navigate to the url after authorization */
-    redirectUrl: string;
+    redirectUrl: string = "/reviews";
 
     constructor(
         private http: Http,
         private messageService: MessageService,
         private router: Router,
     ) {
-        //let token = AuthorizationService.getToken();
-        //this.requestAuthorization = token == null ? true : false;
+        let token = AuthorizationService.getToken();
+        this.requestAuthorization = token == null ? true : false;
 
 
-        //this._user = new UserProfile();
+        this._user = new UserProfile();
     }
 
     setAuthorizationRequired() {
@@ -60,12 +60,24 @@ export class AuthorizationService {
         this.router.navigate(["/login"]);
     }
 
-    authorize(username: string, password: string){
+    /*authorize(username: string, password: string){
         this.requestAuthorization = false;
         this.router.navigate(["/reviews"]);
+    }*/
+
+    put<TContract>(url: string, item: TContract): Observable<TContract> {
+        let body = JSON.stringify(item);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': AuthorizationService.getAuthorizationHeader()
+        });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.put(url, body, options)
+            .map(res => <TContract>res.json());
     }
 
-    /*private handleError(response: Response) {
+    private handleError(response: Response) {
         this.showErrorMessage(response);
     }
 
@@ -116,7 +128,7 @@ export class AuthorizationService {
                     localStorage[AuthorizationService.tokenKey] = JSON.stringify(t);
                     ctx.fillUserProfile()
                         .subscribe(() => {
-                            this.requestAuthorization = true;
+                            this.requestAuthorization = false;
                             observable.next();
                             observable.complete();
                         }, error => {
@@ -163,6 +175,7 @@ export class AuthorizationService {
             ctx.http.get(url, options).subscribe(resp => {
                 let data = resp.json();
                 this._user = new UserProfile(data);
+                this.userRole = this._user.role;
                 observable.next();
                 observable.complete();
             }, error => {
@@ -192,7 +205,7 @@ export class AuthorizationService {
                 str.push(encodeURIComponent(p) + "=" + encodeURIComponent(data[p]));
             }
         return str.join("&");
-    }*/
+    }
 
     logout() {
         localStorage.removeItem(AuthorizationService.tokenKey);

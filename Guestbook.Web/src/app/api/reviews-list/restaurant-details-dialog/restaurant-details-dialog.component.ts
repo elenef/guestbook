@@ -36,7 +36,7 @@ export class RestaurantDetailsDialogComponent implements OnInit {
     if (form.valid) {
          this.service.createRestaurant(this.restaurant)
         .subscribe(m => {
-          this.messageService.success('Ресторан " + this.restaurant.name + " успешно добавлен.');
+          this.messageService.success('Ресторан ' + this.restaurant.name + ' успешно добавлен.');
           this.onCancel();
         }, (error) => {
           this.messageService.error(error.json());

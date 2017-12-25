@@ -12,6 +12,8 @@ import { ApiService } from '../../../api/api.service';
 import * as _ from 'underscore';
 import { FormGroup } from "@angular/forms";
 import { AuthorizationService } from "../../../api/authorization.service";
+import { LoginService } from "../../../login/login.service";
+import { ErrorResponse } from "../../../api/index";
 
 export class PageDetailsComponent<TModel extends IModel> implements OnInit {
   protected modelId: string;
@@ -80,7 +82,8 @@ export class PageDetailsComponent<TModel extends IModel> implements OnInit {
     protected modelService: IModelService<TModel>,
     protected parentRouteName: string,
     protected authorizationService?: AuthorizationService,
-    private permissionService?: PermissionService,
+    private permissionService?: PermissionService,    
+    protected loginService?: LoginService,
     protected dialog?: MdDialog,
   ) {
 
@@ -128,6 +131,18 @@ export class PageDetailsComponent<TModel extends IModel> implements OnInit {
 
   isAvailable(action: string) {
     return this.permissionService.isAvailable(action);
+  }
+
+  
+  onRegistration(username: string, password: string) {
+    let result;
+    this.modelService.saveChanges()
+      .subscribe((res: any) => {
+        this.loginService.login(username, password);
+
+      }, (error: ErrorResponse) =>
+        this.processError(error, this));
+    return result;
   }
 
 }

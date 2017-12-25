@@ -8,6 +8,8 @@ import { Restaurant } from "../contracts/restaurant";
 import { Router, ActivatedRoute } from '@angular/router';
 import { DateTime } from "../../shared/utils/date-time";
 import { RestaurantDetailsDialogComponent } from "./restaurant-details-dialog/restaurant-details-dialog.component";
+import { PermissionService } from "../permission.service";
+import { AuthorizationService } from "../authorization.service";
 
 @Component({
   selector: 'app-reviews-list',
@@ -20,6 +22,7 @@ export class ReviewsListComponent implements OnInit {
   restaurants: Restaurant[];
   restaurantName: string;
   search: string = '';
+  isLike: boolean = false;
 
   dateFrom: string = '';
   dateTo: string = '';
@@ -29,6 +32,7 @@ export class ReviewsListComponent implements OnInit {
 
   orderBy: string = 'created';
   orderDesc: boolean = false;
+
 
   typesSort = [
     { value: 'asc', viewValue: 'возрастанию даты' },
@@ -43,6 +47,8 @@ export class ReviewsListComponent implements OnInit {
     protected dialog: MdDialog,
     private router: Router,
     private route: ActivatedRoute,
+    private permissionService: PermissionService,
+    private authorizationService: AuthorizationService
   ) { }
 
 
@@ -53,17 +59,28 @@ export class ReviewsListComponent implements OnInit {
     });
   }
 
-  onCreateRestaurant(){
+  onCreateRestaurant() {
     const dialogRef = this.dialog.open(RestaurantDetailsDialogComponent);
     dialogRef.afterClosed().subscribe(() => {
-      this.reviewsListService.getRestaurantsList();
+      this.reviewsListService.getRestaurantsList().subscribe((res) => {
+        this.restaurants = res.data;
+      });
     });
   }
 
   onShowReview(review: Review) {
-    const dialogRef = this.dialog.open(ReviewInformationDialogComponent);
-    dialogRef.componentInstance.review = review;
+    if (!this.isLike) {
+
+      const dialogRef = this.dialog.open(ReviewInformationDialogComponent);
+      dialogRef.componentInstance.review = review;
+    }
+    this.isLike = false;
   }
+
+  isAvailable(action: string) {
+    return this.permissionService.isAvailable(action);
+  }
+
 
 
 
@@ -94,6 +111,7 @@ export class ReviewsListComponent implements OnInit {
         }
         let orderDesc = queryParams['orderDesc'];
         if (orderDesc) {
+          this.typeSort = 'desc';
           this.orderDesc = orderDesc;
         }
         this.getReviewsList();
@@ -148,11 +166,9 @@ export class ReviewsListComponent implements OnInit {
   }
 
   onLikeReview(review: Review) {
-    /*
-     * while backend not update
-    */
-    //review.like = review.like ? review.like++ : 1;
+    review.like = review.like ? ++review.like : 1;    
     this.updateReview(review);
+   
   }
 
   onStartDateChange() {

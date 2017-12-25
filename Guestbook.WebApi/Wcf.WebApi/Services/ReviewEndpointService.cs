@@ -56,7 +56,7 @@ namespace GuestBook.WebApi.Services
             item.Restaurant = await _repositoryRestaurants.Items.Where(r => r.Id.Equals(model.RestaurantId))
                 .FirstOrDefaultAsync();
 
-            var restaurant = await _repositoryRestaurants.Items.Where(l => l.Id.Equals(model.RestaurantId))
+            var restaurant = await _repositoryRestaurants.Items.Include(i => i.Users).Where(l => l.Id.Equals(model.RestaurantId))
                 .FirstOrDefaultAsync();
 
             restaurant.Rating = (restaurant.Rating + model.ReviewRating) / 2;

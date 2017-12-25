@@ -22,8 +22,8 @@ export class ReviewsListService {
       'search': search,
       'dateFrom': startTime,
       'dateTo': endTime,
-      /*'orderBy': orderBy,
-      'orderDesc': orderDesc,*/
+      'orderBy': orderBy,
+      'orderDesc': orderDesc,
     };
     const url = ApiEndpoints.reviews().listUrl(parameters);
     return this.apiService.get<ItemList<Review>>(url);

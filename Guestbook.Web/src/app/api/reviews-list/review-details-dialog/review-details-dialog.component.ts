@@ -34,14 +34,14 @@ export class ReviewDetailsDialogComponent implements OnInit {
 
   ngOnInit() {
     this.service.getRestaurantList().subscribe(res => this.restaurantList = res.data);
-    this.review.ratingRestaurant = 0;
+    this.review.reviewRating = 0;
   }
 
   onCreateReview(form: FormGroup) {
     if (form.valid &&
       !this.emailFormControl.hasError('pattern') &&
       !this.emailFormControl.hasError('required')) {
-        if(this.review.ratingRestaurant == 0){
+        if(this.review.reviewRating == 0){
           this.messageService.error('Вы не поставили рейтинг ресторану.');
         } else {
          this.service.createReview(this.review)

@@ -1,5 +1,6 @@
 <div class="main" fxLayoutAlign="center center">
   <div class="mat-user-registration" fxLayoutAlign="center center">
-    <app-user-details textButton="Зарегистрироваться" styleTitle="registrationTitle" styleComponent="registration" title="Регистрация"></app-user-details>
+    <app-user-details textButton="Зарегистрироваться" styleTitle="registrationTitle" (validModelSubmitted)="onRegistration($event)"
+        [passwordButtonVisible]="false" [isRegistration]="true"styleComponent="registration" title="Регистрация"></app-user-details>
   </div>
 </div>

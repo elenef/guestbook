@@ -5,7 +5,7 @@ export class Review {
     restaurantId: string;
     userName: string;
     email: string;
-    ratingRestaurant: number;
+    reviewRating: number;
     like: number;
 
 
@@ -23,7 +23,7 @@ export class Review {
             comment: this.comment,
             email: this.email,
             userName: this.userName,
-            ratingRestaurant: this.ratingRestaurant,
+            reviewRating: this.reviewRating,
             like: this.like,
         }
     }

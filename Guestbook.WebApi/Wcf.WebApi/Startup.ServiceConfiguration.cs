@@ -54,7 +54,9 @@ namespace GuestBook.WebApi
                 opt.GetService<Repository<Restaurant>>(),
                 opt.GetService<IContractMapper>(),
                 opt.GetService<RestaurantEndpointFilter>(),
-                opt.GetService<Repository<Review>>()));
+                opt.GetService<Repository<Review>>(),
+                opt.GetService<IUserContext>(),
+                opt.GetService<IRepository<RegisteredUser>>()));
 
             services.AddScoped(opt => new ReviewEndpointService(
                 opt.GetService<Repository<Review>>(),
