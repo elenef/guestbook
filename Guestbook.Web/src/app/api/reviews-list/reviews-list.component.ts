@@ -10,6 +10,7 @@ import { DateTime } from "../../shared/utils/date-time";
 import { RestaurantDetailsDialogComponent } from "./restaurant-details-dialog/restaurant-details-dialog.component";
 import { PermissionService } from "../permission.service";
 import { AuthorizationService } from "../authorization.service";
+import { User } from "../contracts/user";
 
 @Component({
   selector: 'app-reviews-list',
@@ -42,6 +43,19 @@ export class ReviewsListComponent implements OnInit {
   typeSort: string = "";
 
 
+  get profile() {
+    if (this.authorizationService.userProfile.role === 'user') {
+      return new User(this.authorizationService.userProfile.value).name;
+    }
+  }
+
+  get role() {
+    if (this.authorizationService.userProfile) {
+      return this.authorizationService.userProfile.role;
+    }
+  }
+
+
   constructor(
     private reviewsListService: ReviewsListService,
     protected dialog: MdDialog,
@@ -50,39 +64,6 @@ export class ReviewsListComponent implements OnInit {
     private permissionService: PermissionService,
     private authorizationService: AuthorizationService
   ) { }
-
-
-  onCreateReview() {
-    const dialogRef = this.dialog.open(ReviewDetailsDialogComponent);
-    dialogRef.afterClosed().subscribe(() => {
-      this.getReviewsList();
-    });
-  }
-
-  onCreateRestaurant() {
-    const dialogRef = this.dialog.open(RestaurantDetailsDialogComponent);
-    dialogRef.afterClosed().subscribe(() => {
-      this.reviewsListService.getRestaurantsList().subscribe((res) => {
-        this.restaurants = res.data;
-      });
-    });
-  }
-
-  onShowReview(review: Review) {
-    if (!this.isLike) {
-
-      const dialogRef = this.dialog.open(ReviewInformationDialogComponent);
-      dialogRef.componentInstance.review = review;
-    }
-    this.isLike = false;
-  }
-
-  isAvailable(action: string) {
-    return this.permissionService.isAvailable(action);
-  }
-
-
-
 
   ngOnInit() {
     this.route.queryParams
@@ -119,6 +100,43 @@ export class ReviewsListComponent implements OnInit {
           this.restaurants = res.data;
         });
       });
+  }
+
+  onLogout() {
+    this.authorizationService.logout();
+    this.router.navigate(['login']);
+  }
+
+
+
+
+  onCreateReview() {
+    const dialogRef = this.dialog.open(ReviewDetailsDialogComponent);
+    dialogRef.afterClosed().subscribe(() => {
+      this.getReviewsList();
+    });
+  }
+
+  onCreateRestaurant() {
+    const dialogRef = this.dialog.open(RestaurantDetailsDialogComponent);
+    dialogRef.afterClosed().subscribe(() => {
+      this.reviewsListService.getRestaurantsList().subscribe((res) => {
+        this.restaurants = res.data;
+      });
+    });
+  }
+
+  onShowReview(review: Review) {
+    if (!this.isLike) {
+
+      const dialogRef = this.dialog.open(ReviewInformationDialogComponent);
+      dialogRef.componentInstance.review = review;
+    }
+    this.isLike = false;
+  }
+
+  isAvailable(action: string) {
+    return this.permissionService.isAvailable(action);
   }
 
   onFiltrationReviews() {
@@ -166,9 +184,9 @@ export class ReviewsListComponent implements OnInit {
   }
 
   onLikeReview(review: Review) {
-    review.like = review.like ? ++review.like : 1;    
+    review.like = review.like ? ++review.like : 1;
     this.updateReview(review);
-   
+
   }
 
   onStartDateChange() {

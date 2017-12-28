@@ -71,6 +71,7 @@ namespace GuestBook.WebApi.Services
 
             var value = _mapper.Map<User, RegisteredUserContract>(user);
 
+            
             var usersRole = (await _userManager
                     .GetRolesAsync(user))
                 .FirstOrDefault();

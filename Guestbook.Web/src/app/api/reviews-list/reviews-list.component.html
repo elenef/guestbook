@@ -11,10 +11,12 @@
               <button *ngIf="isAvailable('users')" md-menu-item routerLink="/users">Пользователи</button>
               <button *ngIf="isAvailable('addRestaurant')" md-menu-item (click)="onCreateRestaurant()">Добавить ресторан</button>
             </md-menu>
-          <a class="mat-header-content-exit-text mat-header-content-exit-decoration" href="#">Иванов И.В.</a>
-          <a class="mat-header-content-exit-icon" routerLink="/login">
+          <a [hidden]="!profile" class="mat-header-content-exit-text mat-header-content-exit-decoration" href="#">{{profile}}</a>
+          <span *ngIf="role=='superadmin'" >Администратор</span>
+          <a   *ngIf="profile || role=='superadmin'"  class="mat-header-content-exit-icon" (click)="onLogout()">
             <md-icon class="mat-header-content-exit-icon-position">exit_to_app</md-icon>
           </a>
+           <button *ngIf="!profile && role!='superadmin'" md-menu-item routerLink="/login">Вход</button>
         </div>
       </div>
       <div fxFlex="20%" class="mat-header-content-title" fxLayout="row" fxLayoutAlign="center center">
